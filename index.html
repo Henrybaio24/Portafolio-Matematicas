@@ -8,9 +8,10 @@
     <title>Portafolio de Matemáticas | Henry Montenegro</title>
     
     <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Global (compartido en todas las vistas) -->
     <link rel="stylesheet" href="css/global.css">
@@ -34,108 +35,45 @@
             <h1 class="hero-title"><span>Matemáticas IV</span></h1>
             
             <!-- Subtítulo -->
-            <p class="hero-subtitle">Facultad de Filosofia, Letras y Ciencias de la Educación</p>
+            <p class="hero-subtitle">UCE - Facultad de Filosofia, Letras y Ciencias de la Educación</p>
             
             <!-- Separador -->
             <div class="hero-divider"></div>
 
-            <!-- Tarjeta de Identificación -->
-            <article class="profile-card">
-                <!-- Fondo decorativo animado -->
-                <div class="card-bg-decoration">
-                    <div class="gradient-orb orb-1"></div>
-                    <div class="gradient-orb orb-2"></div>
-                    <div class="gradient-orb orb-3"></div>
+            <!-- PERFIL MINIMALISTA HORIZONTAL -->
+            <div class="profile-minimal">
+                <!-- Avatar Circular con anillo animado -->
+                <div class="profile-avatar-circle">
+                    <span class="avatar-initials">HM</span>
+                    <div class="avatar-status-ring"></div>
+                    <div class="avatar-status-dot"></div>
                 </div>
                 
-                <!-- Header de la tarjeta -->
-                <div class="profile-card-header">
-                    <div class="profile-avatar-wrapper">
-                        <div class="profile-avatar">
-                            <span class="avatar-text">HM</span>
-                        </div>
-                        <div class="avatar-ring"></div>
-                        <div class="status-indicator">
-                            <span class="status-dot"></span>
-                            <span class="status-ping"></span>
-                        </div>
-                    </div>
+                <!-- Datos del Estudiante -->
+                <div class="profile-data">
+                    <h2 class="profile-full-name">Henry Montenegro Alvarez</h2>
+                    <p class="profile-semester">Cuarto Semestre — PCEI</p>
                     
-                    <div class="profile-header-text">
-                        <h2 class="profile-name">Henry Montenegro Alvarez</h2>
-                        <p class="profile-tagline">Estudiante de Cuarto Semestre</p>
+                    <!-- Etiquetas (Tags) -->
+                    <div class="profile-tags">
+                        <span class="tag">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="8" cy="5" r="2"/>
+                                <path d="M4 13C4 10.79 5.79 9 8 9C10.21 9 12 10.79 12 13"/>
+                            </svg>
+                            <span>Docente: Luis Zapata</span>
+                        </span>
+                        
+                        <span class="tag">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 2V8L12 10"/>
+                                <circle cx="8" cy="8" r="6"/>
+                            </svg>
+                            <span>Periodo: 2026</span>
+                        </span>
                     </div>
                 </div>
-                
-                <!-- Grid de información -->
-                <div class="profile-info-grid">
-                    <div class="info-item">
-                        <div class="info-icon-wrapper">
-                            <svg class="info-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="3" width="16" height="12" rx="2"/>
-                                <path d="M2 8H18"/>
-                                <path d="M6 12H10"/>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <span class="info-label">Carrera</span>
-                            <span class="info-value">PCEI</span>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon-wrapper">
-                            <svg class="info-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="10" cy="6" r="3"/>
-                                <path d="M4 17C4 14.5 6.5 13 10 13C13.5 13 16 14.5 16 17"/>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <span class="info-label">Periodo</span>
-                            <span class="info-value">2026</span>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon-wrapper">
-                            <svg class="info-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M3 4H17L18 9V16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18H4C3.46957 18 2.96086 17.7893 2.58579 17.4142C2.21071 17.0391 2 16.5304 2 16V9L3 4Z"/>
-                                <path d="M6 9H14"/>
-                                <path d="M6 13H11"/>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <span class="info-label">Asignatura</span>
-                            <span class="info-value">Matemáticas</span>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon-wrapper">
-                            <svg class="info-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M10 2L2 7L10 12L18 7L10 2Z"/>
-                                <path d="M2 12L10 17L18 12"/>
-                                <path d="M2 17L10 22L18 17"/>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <span class="info-label">Docente</span>
-                            <span class="info-value">Profesor</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Footer con estado -->
-                <div class="profile-card-footer">
-                    <div class="status-badge">
-                        <span class="status-badge-icon">✓</span>
-                        <span class="status-badge-text">En desarrollo activo</span>
-                    </div>
-                    <div class="card-meta">
-                        <span>Última actualización: Mayo 2026</span>
-                    </div>
-                </div>
-            </article>
+            </div>
         </div>
 
         <!-- Botón de Navegación -->
@@ -148,8 +86,16 @@
             </a>
             <p class="cta-hint">Explora el contenido académico</p>
         </div>
+        <!-- Partículas sutiles -->
+        <div class="hero-particles">
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+        </div>
 
-        <!-- Footer -->
+        <!-- Footer discreto -->
         <footer class="hero-footer">
             <span>Última actualización: Mayo 2026</span>
         </footer>
