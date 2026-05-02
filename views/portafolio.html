@@ -3,28 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Henry Montenegro</title>
+    <title>Portafolio | Henry Montenegro</title>
     
-    <!-- Google Fonts -->
+    <!-- Fuentes: Outfit y DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Global (compartido) -->
+    <!-- CSS Global -->
     <link rel="stylesheet" href="../css/global.css">
     
-    <!-- CSS Específico de Portafolio -->
+    <!-- CSS Específico del Portafolio -->
     <link rel="stylesheet" href="../css/portafolio.css">
 </head>
 <body>
-    <!-- Aquí irá el contenido del portafolio -->
-    <main class="portafolio-container">
-        <h1>Contenido del Portafolio</h1>
-        <p>Esta página está en desarrollo...</p>
+
+    <!-- 1. HEADER SUPERIOR -->
+    <header class="top-header">
+        <!-- Izquierda: Logo / Home -->
+        <div class="header-brand">
+            <a href="../index.html" class="logo-link" title="Volver a la portada">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Centro: Buscador -->
+        <div class="search-wrapper">
+            <div class="search-box">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" placeholder="Buscar tema, tarea o concepto..." class="search-input">
+                <div class="search-shortcut">⌘K</div>
+            </div>
+        </div>
+
+        <!-- Derecha: Perfil Usuario -->
+        <div class="user-profile">
+            <div class="user-info">
+                <span class="user-name">Henry Montenegro</span>
+                <span class="user-role">Estudiante</span>
+            </div>
+            <div class="user-avatar">HM</div>
+        </div>
+    </header>
+
+    <!-- 2. LAYOUT PRINCIPAL (Sidebar + Contenido) -->
+    <div class="app-layout">
         
-        <a href="../index.html" class="btn btn-secondary">
-            ← Volver a la portada
-        </a>
-    </main>
+        <!-- SIDEBAR (Menú Lateral) -->
+        <aside class="sidebar">
+            
+            <!-- 🔹 TARJETA DE PERFIL CON AVATAR DE CUERPO -->
+            <div class="sidebar-profile-card">
+                <div class="profile-avatar-large">
+                    <!-- Cabeza con iniciales -->
+                    <div class="avatar-head">
+                        <span class="avatar-initials">HM</span>
+                    </div>
+                    <!-- Cuerpo minimalista -->
+                    <div class="avatar-body"></div>
+                    <!-- Anillo de brillo -->
+                    <div class="avatar-glow-ring"></div>
+                </div>
+            </div>
+            
+            <!-- Navegación Principal -->
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <span class="nav-group-title">Contenido</span>
+                    <a href="./silabo.html" class="nav-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        <span>Sílabo & Rúbrica</span>
+                    </a>
+                    <a href="" class="nav-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        <span>Materia</span>
+                    </a>
+                    <a href="./trabajos-individuales.html" class="nav-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <span>Trabajos Individuales</span>
+                    </a>
+                    <a href="./trabajos-grupales.html" class="nav-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4  
+                        <span>Trabajos Grupales</span>
+                    </a>
+                </div>
+            </nav>
+            
+            <!-- Footer del Sidebar -->
+            <div class="sidebar-footer">
+                <button class="theme-toggle">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <span>Modo Claro</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Dashboard</h1>
+                <p>Bienvenido de nuevo, Henry. Aquí está el resumen de tu progreso.</p>
+            </div>
+            
+            <!-- Placeholder para contenido futuro -->
+            <div class="dashboard-grid">
+                <div class="card placeholder-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Progreso General</h3>
+                    <p>65% completado</p>
+                </div>
+                <div class="card placeholder-card">
+                    <div class="card-icon"></div>
+                    <h3>Próxima Tarea</h3>
+                    <p>Ejercicios Unidad 2</p>
+                </div>
+                <div class="card placeholder-card">
+                    <div class="card-icon"></div>
+                    <h3>Horas de Estudio</h3>
+                    <p>12h esta semana</p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
 </body>
 </html>
