@@ -1,0 +1,26 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS DE PORTAFOLIO
+   (SOLO se aplican en portafolio.html)
+   ============================================ */
+
+.portafolio-container {
+    min-height: 100vh;
+    padding: var(--space-6) var(--space-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    text-align: center;
+}
+
+.portafolio-container h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    color: var(--color-text-primary);
+}
+
+.portafolio-container p {
+    color: var(--color-text-secondary);
+    max-width: 600px;
+}
