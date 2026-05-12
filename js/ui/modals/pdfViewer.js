@@ -3,6 +3,7 @@
    ============================================================ */
 
 import { closeModal } from './modalManager.js';
+import { hideScrollButton } from '../components/scrollButton.js'; // ← NUEVO IMPORT
 
 const GALLERY_ID = 'tareas-gallery';
 const SPINNER_CLASS = 'pdf-loading-spinner';
@@ -93,6 +94,9 @@ function openPdfFromTareas(url, title) {
   silaboModal.classList.add('is-open');
   document.body.style.overflow = 'hidden';
 
+  // ← NUEVO: Ocultar botón volver arriba (Sílabo es modal)
+  hideScrollButton();
+
   // 7. Cuando cargue el PDF, mostrar iframe y ocultar spinner
   const onLoad = () => {
     spinner.classList.remove('is-active');
@@ -123,7 +127,7 @@ function getOrCreateSpinner(container) {
   return spinner;
 }
 
-/* ── 🔥 CORREGIDO: Al cerrar PDF de tarea, volver DIRECTO a Tareas ───────────────── */
+/* ── Al cerrar PDF de tarea, volver DIRECTO a Tareas ──────── */
 
 function setupRestore(modal, iframe, titleEl, spinner, modalBody, onLoadHandler) {
   const originalTitle = 'Sílabo — Matemáticas IV';
@@ -136,21 +140,25 @@ function setupRestore(modal, iframe, titleEl, spinner, modalBody, onLoadHandler)
     // Limpiar onload pendiente
     iframe.removeEventListener('load', onLoadHandler);
 
-    // 🔥 CERRAR Sílabo INMEDIATAMENTE y ABRIR Tareas (sin ver portada)
+    // CERRAR Sílabo INMEDIATAMENTE
     modal.classList.remove('is-open');
-    
+
+    // ABRIR Tareas
     if (tareasModal) {
       tareasModal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
 
-    // Restaurar contenido del Sílabo en SEGUNDO PLANO (para la próxima vez que se abra desde portada)
+    // ← NUEVO: Ocultar botón volver arriba (Tareas es modal)
+    hideScrollButton();
+
+    // Restaurar contenido del Sílabo en SEGUNDO PLANO
     if (titleEl) titleEl.textContent = originalTitle;
     iframe.classList.add('is-loading');
     spinner.classList.add('is-active');
     iframe.src = originalPdf;
 
-    // Cuando cargue el Sílabo original, dejarlo listo para la próxima
+    // Cuando cargue el Sílabo original, dejarlo listo
     const onRestoreLoad = () => {
       spinner.classList.remove('is-active');
       iframe.classList.remove('is-loading');
