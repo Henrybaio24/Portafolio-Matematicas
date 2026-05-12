@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portafolio académico de Matemáticas IV - Henry Montenegro. Computer Science 2026-I.">
+    <meta name="description" content="Portafolio académico de Matemáticas IV - Henry Montenegro. Computer Science 2026-I.">
     <meta name="theme-color" content="#0b0f1e">
     <title>Portafolio de Matemáticas | Henry Montenegro</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,300&family=Outfit:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,300&family=Outfit:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/portada.css">
     <link rel="stylesheet" href="css/contenido.css">
     <link rel="stylesheet" href="css/modales.css">
-
 </head>
 
 <body>
+    <!-- ═══════════════════════════════════════════════════════
+       PORTADA — Hero
+       ═══════════════════════════════════════════════════════ -->
     <main class="hero">
         <div class="math-symbols" aria-hidden="true">
             <span class="symbol-1">∑</span>
@@ -57,16 +55,14 @@
 
                     <ul class="profile-tags" role="list">
                         <li class="tag">
-                            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
-                                stroke-width="1.5" aria-hidden="true">
+                            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <circle cx="8" cy="5" r="2" />
                                 <path d="M4 13C4 10.79 5.79 9 8 9C10.21 9 12 10.79 12 13" />
                             </svg>
                             <span>Docente: Luis Zapata</span>
                         </li>
                         <li class="tag">
-                            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"
-                                stroke-width="1.5" aria-hidden="true">
+                            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <path d="M8 2V8L12 10" />
                                 <circle cx="8" cy="8" r="6" />
                             </svg>
@@ -80,14 +76,12 @@
         <nav class="hero-cta" aria-label="Navegación principal">
             <a href="#contenido" class="btn-cta">
                 <span>Ver Portafolio</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M12 5v14M5 12l7 7 7-7" />
                 </svg>
             </a>
             <p class="cta-hint">Explora el contenido académico</p>
 
-            <!-- ✅ INDICADOR DE SCROLL ELEGANTE -->
             <div class="scroll-indicator" aria-hidden="true">
                 <div class="scroll-mouse">
                     <span class="scroll-wheel"></span>
@@ -105,9 +99,8 @@
         </div>
     </main>
 
-
     <!-- ═══════════════════════════════════════════════════════
-       SECCIÓN CONTENIDO
+       SECCIÓN CONTENIDO — Cards
        ═══════════════════════════════════════════════════════ -->
     <section class="content-section" aria-label="Contenido del portafolio" id="contenido">
         <header class="cs-header">
@@ -120,15 +113,14 @@
             <p class="cs-subtitle">Matemáticas IV · Período 2026</p>
         </header>
 
-        <div class="cs-grid" role="list">
+        <div class="cs-grid">
 
-            <!-- CARD: Sílabo -->
-            <article class="cs-card cs-card--blue" role="listitem">
+            <!-- Card: Sílabo -->
+            <article class="cs-card cs-card--blue">
                 <div class="cs-card-inner">
                     <div class="cs-card-top">
                         <div class="cs-icon cs-icon--blue" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                                 <polyline points="14,2 14,8 20,8" />
                                 <line x1="16" y1="13" x2="8" y2="13" />
@@ -139,19 +131,15 @@
                     </div>
                     <div class="cs-card-body">
                         <h3 class="cs-card-title">Sílabo</h3>
-                        <p class="cs-card-desc">Programa oficial de la materia, objetivos de aprendizaje, metodología y
-                            cronograma del período 2026.</p>
+                        <p class="cs-card-desc">Programa oficial de la materia, objetivos de aprendizaje, metodología y cronograma del período 2026.</p>
                     </div>
                     <div class="cs-card-bottom">
-                        <div class="cs-progress" role="meter" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
-                            aria-label="Progreso del sílabo">
+                        <div class="cs-progress" role="meter" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso del sílabo">
                             <div class="cs-progress-fill cs-progress-fill--blue" style="width: 100%"></div>
                         </div>
-
                         <button class="cs-btn" data-modal="silabo" aria-haspopup="dialog" type="button">
                             <span>Ver documento</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" />
                             </svg>
                         </button>
@@ -160,36 +148,29 @@
                 <div class="cs-card-orb" aria-hidden="true"></div>
             </article>
 
-            <!-- CARD: Tareas -->
-            <article class="cs-card cs-card--green" role="listitem">
+            <!-- Card: Tareas -->
+            <article class="cs-card cs-card--green">
                 <div class="cs-card-inner">
                     <div class="cs-card-top">
                         <div class="cs-icon cs-icon--green" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M9 11l3 3L22 4" />
                                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                             </svg>
                         </div>
-                        <!-- ✅ SIN TEXTO ESTÁTICO - JS lo pondrá -->
-                        <span class="cs-badge cs-badge--green" data-tareas-badge></span>
+                        <span class="cs-badge cs-badge--green" data-tareas-badge>Cargando...</span>
                     </div>
                     <div class="cs-card-body">
                         <h3 class="cs-card-title">Tareas</h3>
-                        <p class="cs-card-desc">Registro de actividades individuales y grupales con su estado de entrega
-                            y seguimiento del período.</p>
+                        <p class="cs-card-desc">Registro de actividades individuales y grupales con su estado de entrega y seguimiento del período.</p>
                     </div>
                     <div class="cs-card-bottom">
-                        <!-- ✅ BARRA INICIAL EN 0% - JS la llenará -->
-                        <div class="cs-progress" role="meter" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
-                            aria-label="Progreso de tareas">
-                            <div class="cs-progress-fill cs-progress-fill--green" data-tareas-progress
-                                style="width: 0%"></div>
+                        <div class="cs-progress" role="meter" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de tareas">
+                            <div class="cs-progress-fill cs-progress-fill--green" data-tareas-progress style="width: 0%"></div>
                         </div>
                         <button class="cs-btn" data-modal="tareas" aria-haspopup="dialog" type="button">
                             <span>Ver tareas</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" />
                             </svg>
                         </button>
@@ -198,13 +179,12 @@
                 <div class="cs-card-orb" aria-hidden="true"></div>
             </article>
 
-            <!-- CARD: Evaluaciones -->
-            <article class="cs-card cs-card--amber" role="listitem">
+            <!-- Card: Otros Recursos -->
+            <article class="cs-card cs-card--amber">
                 <div class="cs-card-inner">
                     <div class="cs-card-top">
                         <div class="cs-icon cs-icon--amber" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
                                 <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                             </svg>
@@ -216,14 +196,12 @@
                         <p class="cs-card-desc">Recursos de la materia por confirmar aún.</p>
                     </div>
                     <div class="cs-card-bottom">
-                        <div class="cs-progress" role="meter" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"
-                            aria-label="Progreso de evaluaciones">
+                        <div class="cs-progress" role="meter" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de evaluaciones">
                             <div class="cs-progress-fill cs-progress-fill--amber" style="width: 33%"></div>
                         </div>
                         <button class="cs-btn" data-modal="evaluaciones" aria-haspopup="dialog" type="button">
                             <span>Ver otros recursos</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" />
                             </svg>
                         </button>
@@ -235,18 +213,14 @@
         </div>
     </section>
 
-
     <!-- ═══════════════════════════════════════════════════════
-       MODAL: SÍLABO — PDF Viewer
+       MODAL: SÍLABO
        ═══════════════════════════════════════════════════════ -->
-    <div class="modal-overlay" id="modal-silabo" role="dialog" aria-modal="true" aria-label="Sílabo"
-        data-modal-id="silabo">
+    <div class="modal-overlay" id="modal-silabo" role="dialog" aria-modal="true" aria-label="Sílabo" data-modal-id="silabo">
         <div class="modal-box" tabindex="-1" role="document">
-
             <div class="modal-header">
                 <div class="modal-header-icon modal-header-icon--blue" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                         <polyline points="14,2 14,8 20,8" />
                         <line x1="16" y1="13" x2="8" y2="13" />
@@ -254,84 +228,64 @@
                     </svg>
                 </div>
                 <div class="modal-title-wrap">
-
                     <div class="modal-title">Sílabo — Matemáticas IV</div>
                     <div class="modal-subtitle">Período 2026 · PCEI: Cuarto Semestre</div>
                 </div>
                 <button class="modal-close" data-close="silabo" aria-label="Cerrar modal" type="button">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                 </button>
             </div>
-
             <div class="modal-body" id="silabo-modal-body">
-                <iframe src="https://drive.google.com/file/d/1w0Nd4vsftWvUw5GlPORKxw0OVSemO37b/preview"
-                    class="pdf-iframe" title="Sílabo Matemáticas IV" allowfullscreen loading="lazy">
-                </iframe>
-
-            </div><!-- /#silabo-modal-body -->
+                <iframe src="https://drive.google.com/file/d/1w0Nd4vsftWvUw5GlPORKxw0OVSemO37b/preview" class="pdf-iframe" title="Sílabo Matemáticas IV" allowfullscreen loading="lazy"></iframe>
+            </div>
         </div>
     </div>
 
-
     <!-- ═══════════════════════════════════════════════════════
-       MODAL: TAREAS — Fullscreen con filtros
+       MODAL: TAREAS
        ═══════════════════════════════════════════════════════ -->
-    <div class="modal-overlay" id="modal-tareas" role="dialog" aria-modal="true" aria-label="Tareas"
-        data-modal-id="tareas">
+    <div class="modal-overlay" id="modal-tareas" role="dialog" aria-modal="true" aria-label="Tareas" data-modal-id="tareas">
         <div class="modal-box modal-box--fullscreen" tabindex="-1" role="document">
-
             <div class="modal-header modal-header--with-filters">
                 <div class="modal-header-icon modal-header-icon--green" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M9 11l3 3L22 4" />
                         <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                 </div>
                 <div class="modal-title-wrap">
                     <div class="modal-title">Tareas — Matemáticas IV</div>
-                    <!-- ✅ SIN TEXTO ESTÁTICO - JS lo pondrá -->
                     <div class="modal-subtitle" data-tareas-subtitle></div>
                 </div>
                 <div class="filter-bar" role="tablist" aria-label="Filtrar tareas">
-                    <button class="filter-tab active" role="tab" aria-selected="true" data-filter="todas"
-                        type="button">Todas</button>
-                    <button class="filter-tab" role="tab" aria-selected="false" data-filter="individual"
-                        type="button">Individuales</button>
-                    <button class="filter-tab" role="tab" aria-selected="false" data-filter="grupal"
-                        type="button">Grupales</button>
+                    <button class="filter-tab active" role="tab" aria-selected="true" data-filter="todas" type="button">Todas</button>
+                    <button class="filter-tab" role="tab" aria-selected="false" data-filter="individual" type="button">Individuales</button>
+                    <button class="filter-tab" role="tab" aria-selected="false" data-filter="grupal" type="button">Grupales</button>
                 </div>
                 <button class="modal-close" data-close="tareas" aria-label="Cerrar modal" type="button">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                 </button>
             </div>
-
             <div class="modal-body">
                 <ul class="gallery-grid" id="tareas-gallery" role="list" aria-live="polite"></ul>
             </div>
-
         </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════
-     MODAL: EVALUACIONES
-     ═══════════════════════════════════════════════════════ -->
-    <div class="modal-overlay" id="modal-evaluaciones" role="dialog" aria-modal="true" aria-label="Evaluaciones"
-        data-modal-id="evaluaciones">
+       MODAL: EVALUACIONES
+       ═══════════════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="modal-evaluaciones" role="dialog" aria-modal="true" aria-label="Evaluaciones" data-modal-id="evaluaciones">
         <div class="modal-box modal-box--wide" tabindex="-1" role="document">
-
             <div class="modal-header">
                 <div class="modal-header-icon modal-header-icon--amber" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                     </svg>
@@ -341,19 +295,16 @@
                     <div class="modal-subtitle">No disponible</div>
                 </div>
                 <button class="modal-close" data-close="evaluaciones" aria-label="Cerrar modal" type="button">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                 </button>
             </div>
-
             <div class="modal-body">
                 <div class="gallery-empty">
                     <div class="gallery-empty__icon" aria-hidden="true">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
                             <line x1="8" y1="2" x2="8" y2="6" />
@@ -363,21 +314,20 @@
                         </svg>
                     </div>
                     <p class="gallery-empty__title">Próximamente</p>
-                    <p class="gallery-empty__desc">No hay información disponible por el momento. Estamos trabajando en
-                        ello.</p>
+                    <p class="gallery-empty__desc">No hay información disponible por el momento. Estamos trabajando en ello.</p>
                 </div>
             </div>
-
         </div>
     </div>
 
+    <!-- Script principal -->
     <script type="module" src="js/app.js"></script>
 
+    <!-- Botón volver arriba -->
     <button id="btn-volver-arriba" class="btn-volver-arriba" aria-label="Volver al inicio" type="button" title="Ir arriba">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M12 19V5M5 12l7-7 7 7"/>
         </svg>
     </button>
 </body>
-
 </html>
