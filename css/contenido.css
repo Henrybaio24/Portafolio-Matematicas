@@ -1,0 +1,620 @@
+/* ============================================================
+   contenido.css — ESTILOS DE CONTENIDO/CARDS/FILTROS/TAREAS
+   Henry Montenegro · Portafolio Matemáticas IV
+   ============================================================ */
+
+
+/* ============================================================
+   01. SECCIÓN DE CONTENIDO — WRAPPER
+   ============================================================ */
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 4rem 1.5rem 6rem;
+    background: var(--color-bg);
+    border-top: 0.5px solid rgba(148, 163, 184, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(96, 165, 250, 0.35),
+        rgba(52, 211, 153, 0.25),
+        transparent
+    );
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   02. ENCABEZADO DE SECCIÓN
+   ============================================================ */
+
+.cs-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.cs-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.cs-eyebrow-line {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.5));
+}
+
+.cs-eyebrow-line--right {
+    background: linear-gradient(90deg, rgba(96, 165, 250, 0.5), transparent);
+}
+
+.cs-eyebrow-text {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.cs-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.cs-title em {
+    font-style: italic;
+    font-weight: 300;
+    background: linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cs-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+
+/* ============================================================
+   03. GRID DE CARDS
+   ============================================================ */
+
+.cs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+/* ============================================================
+   04. CARD
+   ============================================================ */
+
+.cs-card {
+    position: relative;
+    border-radius: var(--radius-xl);
+    border: 0.5px solid rgba(148, 163, 184, 0.12);
+    background: rgba(255, 255, 255, 0.025);
+    overflow: hidden;
+    transition: transform 220ms var(--ease-out), border-color 220ms var(--ease-out), background 220ms var(--ease-out);
+    cursor: default;
+}
+
+.cs-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    opacity: 0;
+    transition: opacity 220ms ease;
+    z-index: 2;
+}
+
+.cs-card--blue::before  { background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.7), transparent); }
+.cs-card--green::before { background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.7), transparent); }
+.cs-card--amber::before { background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.7), transparent); }
+
+.cs-card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.04); }
+.cs-card--blue:hover  { border-color: rgba(96, 165, 250, 0.30); }
+.cs-card--green:hover { border-color: rgba(52, 211, 153, 0.30); }
+.cs-card--amber:hover { border-color: rgba(251, 191, 36, 0.30); }
+.cs-card:hover::before { opacity: 1; }
+
+.cs-card-orb {
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(30px);
+}
+
+.cs-card--blue  .cs-card-orb { background: rgba(96, 165, 250, 0.12); }
+.cs-card--green .cs-card-orb { background: rgba(52, 211, 153, 0.12); }
+.cs-card--amber .cs-card-orb { background: rgba(251, 191, 36, 0.12); }
+.cs-card:hover .cs-card-orb  { opacity: 1; }
+
+
+/* ============================================================
+   05. CARD INNER
+   ============================================================ */
+
+.cs-card-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem 1.75rem;
+    height: 100%;
+}
+
+.cs-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.cs-card-body { flex: 1; }
+
+.cs-card-title {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    letter-spacing: -0.015em;
+    margin: 0 0 0.5rem 0;
+}
+
+.cs-card-desc {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.cs-card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+
+/* ============================================================
+   06. ÍCONO
+   ============================================================ */
+
+.cs-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px; height: 54px;
+    border-radius: 13px;
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+}
+
+.cs-card:hover .cs-icon { transform: scale(1.07); }
+
+.cs-icon--blue  { background: rgba(96, 165, 250, 0.10); color: var(--color-primary-400); border: 0.5px solid rgba(96, 165, 250, 0.20); }
+.cs-icon--green { background: rgba(52, 211, 153, 0.10); color: var(--color-accent);       border: 0.5px solid rgba(52, 211, 153, 0.20); }
+.cs-icon--amber { background: rgba(251, 191, 36, 0.10); color: #fbbf24;                   border: 0.5px solid rgba(251, 191, 36, 0.20); }
+
+
+/* ============================================================
+   07. BADGE
+   ============================================================ */
+
+.cs-badge {
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.cs-badge--blue  { background: rgba(96, 165, 250, 0.10); color: var(--color-primary-300); border: 0.5px solid rgba(96, 165, 250, 0.20); }
+.cs-badge--green { background: rgba(52, 211, 153, 0.10); color: var(--color-accent);       border: 0.5px solid rgba(52, 211, 153, 0.20); }
+.cs-badge--amber { background: rgba(251, 191, 36, 0.10); color: #fbbf24;                   border: 0.5px solid rgba(251, 191, 36, 0.20); }
+
+
+/* ============================================================
+   08. BARRA DE PROGRESO
+   ============================================================ */
+
+.cs-progress {
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.cs-progress-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 800ms var(--ease-out);
+}
+
+.cs-progress-fill--blue  { background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-400)); }
+.cs-progress-fill--green { background: linear-gradient(90deg, var(--color-accent-hover), var(--color-accent)); }
+.cs-progress-fill--amber { background: linear-gradient(90deg, #d97706, #fbbf24); }
+
+
+/* ============================================================
+   09. BOTÓN DE ACCIÓN EN CARDS
+   ============================================================ */
+
+.cs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    padding: 9px 18px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 0.5px solid rgba(148, 163, 184, 0.15);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 120ms ease;
+}
+
+.cs-btn svg {
+    color: var(--color-text-muted);
+    transition: transform 160ms ease, color 160ms ease;
+    flex-shrink: 0;
+}
+
+.cs-card--blue  .cs-btn:hover { color: var(--color-text-primary); background: rgba(96, 165, 250, 0.10); border-color: rgba(96, 165, 250, 0.30); }
+.cs-card--green .cs-btn:hover { color: var(--color-text-primary); background: rgba(52, 211, 153, 0.10); border-color: rgba(52, 211, 153, 0.30); }
+.cs-card--amber .cs-btn:hover { color: var(--color-text-primary); background: rgba(251, 191, 36, 0.10); border-color: rgba(251, 191, 36, 0.30); }
+
+.cs-btn:hover svg { transform: translateX(4px); color: currentColor; }
+.cs-btn:active    { transform: scale(0.97); }
+
+
+/* ============================================================
+   10. FILTROS
+   ============================================================ */
+
+.filter-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.5px solid rgba(148, 163, 184, 0.10);
+    border-radius: 9999px;
+    padding: 3px;
+    width: fit-content;
+}
+
+.filter-tab {
+    padding: 7px 20px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: none;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: color 150ms ease, background 150ms ease;
+}
+
+.filter-tab:hover { color: var(--color-text-secondary); }
+
+.filter-tab.active {
+    color: var(--color-text-primary);
+    background: rgba(96, 165, 250, 0.12);
+    border: 0.5px solid rgba(96, 165, 250, 0.22);
+}
+
+
+/* ============================================================
+   11. LISTA DE TAREAS / EVALUACIONES
+   ============================================================ */
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 0.5px solid rgba(148, 163, 184, 0.08);
+    border-radius: 12px;
+    transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.task-card:hover {
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(148, 163, 184, 0.16);
+    transform: translateX(3px);
+}
+
+.task-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border-radius: 9px;
+    flex-shrink: 0;
+}
+
+.task-icon--individual {
+    background: rgba(96, 165, 250, 0.10);
+    color: var(--color-primary-400);
+    border: 0.5px solid rgba(96, 165, 250, 0.20);
+}
+
+.task-icon--grupal {
+    background: rgba(52, 211, 153, 0.10);
+    color: var(--color-accent);
+    border: 0.5px solid rgba(52, 211, 153, 0.20);
+}
+
+.task-info { flex: 1; min-width: 0; }
+
+.task-name {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.task-badge {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.task-badge--entregado {
+    background: rgba(52, 211, 153, 0.10);
+    color: #34d399;
+    border: 0.5px solid rgba(52, 211, 153, 0.22);
+}
+
+.task-badge--pendiente {
+    background: rgba(251, 191, 36, 0.10);
+    color: #fbbf24;
+    border: 0.5px solid rgba(251, 191, 36, 0.22);
+}
+
+.task-badge--revision {
+    background: rgba(96, 165, 250, 0.10);
+    color: var(--color-primary-400);
+    border: 0.5px solid rgba(96, 165, 250, 0.22);
+}
+
+
+/* ============================================================
+   12. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 640px) {
+    .content-section { padding: 3rem 1rem 4rem; }
+
+    .cs-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .cs-card-inner { padding: 1.5rem 1.25rem; }
+    .cs-title { font-size: 2rem; }
+
+    .task-name { font-size: 13px; }
+    .filter-tab { padding: 6px 14px; }
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+    .cs-grid { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
+    .cs-grid .cs-card:nth-child(3) { grid-column: 1 / -1; }
+}
+
+
+/* ============================================================
+   13. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .cs-card, .cs-icon, .cs-card-orb, .cs-btn, .cs-btn svg, .cs-card::before {
+        animation: none !important;
+        transition: none !important;
+    }
+    .cs-card:hover, .task-card:hover { transform: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ESTILOS ADICIONALES PARA CONTEO DINÁMICO
+   ══════════════════════════════════════════════════════════════ */
+
+/* Transición suave en la barra de progreso de la card */
+.cs-card--green .cs-progress-fill--green {
+    transition: width 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* El badge se ajusta si el texto es largo */
+.cs-card--green .cs-badge--green {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX: Evitar flash de contenido estático en card de tareas
+   ══════════════════════════════════════════════════════════════ */
+
+/* Inicialmente oculto hasta que JS ponga el contenido real */
+[data-tareas-badge],
+[data-tareas-progress] {
+  opacity: 0;
+  transition: opacity 400ms ease, width 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Cuando JS actualiza, se hace visible */
+[data-tareas-badge]:not(:empty),
+[data-tareas-progress]:not([style*="width: 0%"]) {
+  opacity: 1;
+}
+
+/* Asegurar que la barra tenga altura mínima */
+.cs-progress {
+  min-height: 4px;
+}
+
+/* El fill siempre visible aunque sea 0% */
+.cs-progress-fill {
+  min-width: 2px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CONTEO DINÁMICO — Movido desde modales.css
+   ══════════════════════════════════════════════════════════════ */
+
+/* Transición suave en la barra de progreso */
+.cs-progress-fill--green {
+    transition: width 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* El subtitle del modal de tareas no se rompa en móvil */
+#modal-tareas .modal-subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Badge de la card principal */
+.cs-card--green .cs-badge--green {
+    transition: all 200ms ease;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BOTÓN FLOTANTE: VOLVER AL INICIO
+   ══════════════════════════════════════════════════════ */
+.btn-volver-arriba {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    background: var(--color-bg-elevated, #0f172a);
+    border: 1px solid var(--color-border-subtle, #334155);
+    border-radius: 50%;
+    color: var(--color-primary-400, #60a5fa);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.9);
+    transition: all 320ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+}
+
+/* Aparece cuando tiene esta clase (la pone JS) */
+.btn-volver-arriba.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* Hover elegante */
+.btn-volver-arriba:hover {
+    background: var(--color-primary-400, #60a5fa);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 28px rgba(96, 165, 250, 0.35);
+}
+
+.btn-volver-arriba:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .btn-volver-arriba {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* Respetar preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .btn-volver-arriba,
+    .btn-volver-arriba.is-visible {
+        transition: none !important;
+        transform: none !important;
+    }
+}
