@@ -1,15 +1,7 @@
-/* ============================================
-   GLOBAL.CSS — Variables, reset, utilidades, keyframes base
-   ============================================ */
-
-/* ── 01. VARIABLES ────────────────────────────────────────── */
 :root {
-  /* Colores base */
   --color-bg: #0b0f1e;
   --color-bg-elevated: #111827;
   --color-surface: #1e293b;
-
-  /* Primarios */
   --color-primary-50: #eff6ff;
   --color-primary-100: #dbeafe;
   --color-primary-300: #93c5fd;
@@ -19,27 +11,17 @@
   --color-primary: #60a5fa;
   --color-primary-light: #93c5fd;
   --color-primary-dark: #2563eb;
-
-  /* Acento */
   --color-accent: #34d399;
   --color-accent-hover: #10b981;
-
-  /* Texto */
   --color-text-primary: #f8fafc;
   --color-text-secondary: #94a3b8;
   --color-text-muted: #64748b;
   --color-text-disabled: #475569;
-
-  /* Bordes */
   --color-border-subtle: rgba(148, 163, 184, 0.1);
   --color-border-hover: rgba(96, 165, 250, 0.3);
-
-  /* Tipografía */
   --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Fraunces', 'Georgia', serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Tamaños de texto */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -48,8 +30,6 @@
   --text-2xl: 1.5rem;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
-
-  /* Espaciado */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -62,21 +42,15 @@
   --space-16: 4rem;
   --space-20: 5rem;
   --space-24: 6rem;
-
-  /* Bordes */
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
-
-  /* Sombras */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-glow: 0 0 20px rgba(96, 165, 250, 0.15);
-
-  /* Transiciones */
   --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -87,7 +61,6 @@
   --transition-slow: 500ms var(--ease-out);
   --transition-bounce: 400ms var(--ease-spring);
 
-  /* Z-index */
   --z-base: 0;
   --z-dropdown: 100;
   --z-sticky: 200;
@@ -95,11 +68,9 @@
   --z-modal: 400;
   --z-toast: 500;
 
-  /* Modal */
   --modal-glow: rgba(96, 165, 250, 0.08);
 }
 
-/* ── 02. RESET ──────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -125,7 +96,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── 03. UTILIDADES ─────────────────────────────────────── */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -138,7 +108,6 @@ body {
   border-width: 0;
 }
 
-/* ── 04. KEYFRAMES BASE ─────────────────────────────────── */
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(2rem); }
   to { opacity: 1; transform: translateY(0); }
@@ -174,7 +143,6 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* ── 05. SELECCIÓN Y SCROLLBAR ──────────────────────────── */
 ::selection {
   background-color: var(--color-primary-400);
   color: var(--color-bg);
@@ -185,7 +153,6 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--color-surface); border-radius: var(--radius-full); }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
 
-/* ── 06. REDUCED MOTION GLOBAL ──────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
