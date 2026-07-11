@@ -1,13 +1,5 @@
-/* ============================================================
-   GALLERY_RENDERER.JS — Renderizado de galería
-   Genérico: funciona para cualquier galería (tareas, recursos…)
-   pasando su galleryId (id del <ul>).
-   ============================================================ */
-
 import { buildCard } from '../templates/uiTemplates.js';
 import { mostrarEstado, limpiarEstados } from '../components/uiState.js';
-
-/* ── Renderizado principal ────────────────────────────────── */
 
 export function renderGallery(items, galleryId) {
   const ul = document.getElementById(galleryId);
@@ -31,8 +23,6 @@ export function clearGallery(galleryId) {
   if (ul) ul.innerHTML = '';
 }
 
-/* ── Fallback de miniaturas (imagen liviana, no iframe) ───── */
-
 function initAllFallbacks(container) {
   container.querySelectorAll('.gallery-card__image--thumb').forEach(zone => {
     initThumbFallback(zone);
@@ -46,7 +36,6 @@ function initThumbFallback(imageZone) {
 
   if (!img) return;
 
-  // La imagen ya cargó desde cache antes de engancharse el listener
   if (img.complete && img.naturalWidth > 0) {
     ocultarSkeleton(skeleton);
     return;
@@ -69,8 +58,6 @@ function ocultarSkeleton(skeleton) {
 function applyFallback(skeleton, tipo) {
   if (!skeleton) return;
 
-  // La miniatura de Drive ya falló (evento "error" de la <img> principal),
-  // así que aquí vamos directo al ícono genérico sin reintentar la misma URL.
   const label = getFallbackLabel(tipo);
   skeleton.innerHTML = createFallbackIcon(label);
   skeleton.style.opacity = '1';
