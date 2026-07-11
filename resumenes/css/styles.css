@@ -1,19 +1,13 @@
-/* ============================================================
-   RESÚMENES — Estilos compartidos por unidad-1..4.html
-   Adaptado a la paleta oscura del Portafolio de Matemáticas.
-   ============================================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,300&display=swap');
 
 :root {
-  /* ── Paleta del portafolio (mismos valores que css/global.css) ── */
-  --primary: #f8fafc;              /* texto principal (antes navy sobre blanco, ahora claro sobre oscuro) */
-  --accent: #60a5fa;                /* azul del portafolio (antes cyan #0ea5e9) */
+  --primary: #f8fafc;              
+  --accent: #60a5fa;              
   --text: #e2e8f0;
   --text-light: #94a3b8;
-  --bg: #0b0f1e;                    /* --color-bg */
-  --bg-elevated: #111827;           /* --color-bg-elevated */
-  --card: #111827;                  /* tarjetas oscuras en vez de blancas */
+  --bg: #0b0f1e;                   
+  --bg-elevated: #111827;          
+  --card: #111827;                
   --border: rgba(148, 163, 184, 0.14);
 
   --c1: #60a5fa; --c1-bg: rgba(96, 165, 250, 0.12);
@@ -27,7 +21,6 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ====== FONDO — versión oscura del gradiente + patrón de puntos ====== */
 body {
   font-family: var(--font-sans);
   background: linear-gradient(135deg, #0b0f1e 0%, #0e1424 25%, #0b0f1e 50%, #0e1424 75%, #0b0f1e 100%);
@@ -38,7 +31,6 @@ body {
   min-height: 100vh;
 }
 
-/* Patrón sutil de puntos (mismo concepto, opacidad ajustada para fondo oscuro) */
 body::before {
   content: '';
   position: fixed;
@@ -60,7 +52,6 @@ body::before {
   z-index: 1;
 }
 
-/* ====== HERO ====== */
 .u1-hero {
   background: linear-gradient(135deg, #0b0f1e 0%, #14213d 40%, #1d4ed8 130%);
   border: 0.5px solid var(--border);
@@ -178,7 +169,6 @@ body::before {
   font-weight: 500;
 }
 
-/* ====== SECTION TITLES ====== */
 .u1-section-title {
   font-family: var(--font-display);
   font-size: 1.35rem;
@@ -198,7 +188,6 @@ body::before {
   border-radius: 3px;
 }
 
-/* ====== TARJETAS DE CONTENIDO ====== */
 .u1-card {
   background: var(--card);
   border-radius: 20px;
@@ -257,11 +246,6 @@ body::before {
 
 .u1-card-desc strong { color: var(--primary); }
 
-/* ====== IMÁGENES ======
-   Se mantienen sobre fondo claro/blanco a propósito: la mayoría
-   de gráficos, capturas y diagramas importados tienen fondo blanco,
-   así que un "marco" claro evita que se vean cortados o con bordes
-   raros sobre el fondo oscuro de la página. */
 .u1-img-container {
   width: 100%;
   margin: 20px 0;
@@ -344,7 +328,6 @@ body::before {
   font-style: italic;
 }
 
-/* ====== ACTIVIDADES ====== */
 .u1-activity-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -382,7 +365,6 @@ body::before {
 .u1-activity-box.ape .u1-activity-label { color: var(--c2); }
 .u1-activity-box.aa .u1-activity-label { color: var(--c3); }
 
-/* ====== RECURSOS Y EVALUACIÓN ====== */
 .u1-resources {
   padding: 16px 20px;
   background: var(--bg-elevated);
@@ -421,7 +403,6 @@ body::before {
   letter-spacing: 0.3px;
 }
 
-/* ====== TABLAS ====== */
 .u1-table-wrap {
   overflow-x: auto;
   margin: 18px 0;
@@ -459,7 +440,6 @@ body::before {
 .u1-table tr:hover { background: rgba(96, 165, 250, 0.06); }
 .u1-table tr:last-child td { border-bottom: none; }
 
-/* ====== HABILIDADES ====== */
 .u1-skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -486,7 +466,6 @@ body::before {
 .u1-skill-name { font-weight: 600; font-size: 0.9rem; color: var(--primary); }
 .u1-skill-cat { font-size: 0.75rem; color: var(--text-light); margin-top: 4px; }
 
-/* ====== FOOTER ====== */
 .u1-footer {
   margin-top: 50px;
   text-align: center;
@@ -520,7 +499,6 @@ body::before {
   .u1-img-container img, .u1-img-container-small img { max-height: 220px; padding: 8px; }
 }
 
-/* ====== BARRA DE PROGRESO DE LECTURA ====== */
 .u1-progress-bar {
   position: fixed;
   top: 0;
