@@ -1,9 +1,3 @@
-/* ============================================================
-   FULLSCREEN-VIEWER.CSS — Visor a pantalla completa
-   Usado SOLO para recursos HTML locales (resúmenes propios).
-   Los PDF de Drive siguen usando el modal normal.
-   ============================================================ */
-
 .fullscreen-viewer {
   position: fixed;
   inset: 0;
