@@ -1,14 +1,6 @@
-/* ============================================================
-   FILTER_MANAGER.JS — Filtrado de galerías (desacoplado del DOM)
-   Fábrica: cada galería (tareas, recursos, …) crea su propia
-   instancia independiente, con su propio estado y suscriptores.
-   ============================================================ */
-
 export function createFilterManager(defaultFilter = 'todas') {
   let currentFilter = defaultFilter;
   let subscribers = [];
-
-  /* ── API pública ────────────────────────────────────────── */
 
   function filtrar(items, filtro) {
     return filtro === defaultFilter ? items : items.filter(t => t.tipo === filtro);
@@ -28,8 +20,6 @@ export function createFilterManager(defaultFilter = 'todas') {
     setFilter(defaultFilter);
   }
 
-  /* ── Patrón Observer para notificar cambios ───────────────── */
-
   function subscribe(callback) {
     subscribers.push(callback);
     return () => {
@@ -40,8 +30,6 @@ export function createFilterManager(defaultFilter = 'todas') {
   function notifySubscribers() {
     subscribers.forEach(cb => cb(currentFilter));
   }
-
-  /* ── Inicialización de UI (opcional, desacoplada) ─────────── */
 
   function initFilterBar(containerSelector, onChange) {
     const filterBar = document.querySelector(containerSelector);
