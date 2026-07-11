@@ -1,7 +1,3 @@
-/* ============================================================
-   CSV_PARSER.JS — Convierte texto CSV a array de objetos
-   ============================================================ */
-
 export function parsearCSV(texto) {
   const lineas = texto.trim().split('\n');
   if (lineas.length < 2) return [];
