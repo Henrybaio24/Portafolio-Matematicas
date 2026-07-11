@@ -1,12 +1,6 @@
-/* ============================================================
-   MODAL_MANAGER.JS — Abrir, cerrar y eventos de modales
-   ============================================================ */
-
 import { hideScrollButton, showScrollButton } from '../components/scrollButton.js';
 
 const modalesAbiertos = new Set();
-
-/* ── Apertura / Cierre ────────────────────────────────────── */
 
 export function openModal(id) {
   const overlay = document.getElementById('modal-' + id);
@@ -40,8 +34,6 @@ export function closeModal(id) {
 export function cerrarTodosLosModales() {
   [...modalesAbiertos].forEach(id => closeModal(id));
 }
-
-/* ── Inicialización de eventos globales ───────────────────── */
 
 export function initModalEvents() {
   document.querySelectorAll('[data-modal]').forEach(btn => {
