@@ -1,10 +1,3 @@
-/* ============================================================
-   APP_CONTROLLER.JS — Orquesta toda la aplicación.
-   Tareas y Otros Recursos (Resumen/Apuntes) se cargan del MISMO
-   Sheet (una sola petición) y se separan por la columna
-   "categoria" (tarea / recurso).
-   ============================================================ */
-
 import { cargarTareas } from '../data/api.js';
 import { createFilterManager } from '../ui/views/filterManager.js';
 import { renderGallery, clearGallery } from '../ui/views/galleryRenderer.js';
@@ -18,7 +11,6 @@ const GALLERIES = {
   recursos: { galleryId: 'recursos-gallery', modalId: 'recursos' }
 };
 
-// Filtro "todas"/"todos" = sin filtro, muestra todo
 const tareasFilter = createFilterManager('todas');
 const recursosFilter = createFilterManager('todos');
 
@@ -28,8 +20,6 @@ let tareasSearchQuery = '';
 let recursosSearchQuery = '';
 let unsubscribeTareasFilter = null;
 let unsubscribeRecursosFilter = null;
-
-/* ── Inicialización ───────────────────────────────────────── */
 
 export function initAppController() {
   console.log('🚀 Iniciando app...');
@@ -53,14 +43,10 @@ export function initAppController() {
   loadData();
 }
 
-/* ── Footer: año dinámico ──────────────────────────────────── */
-
 function initFooterYear() {
   const el = document.querySelector('[data-footer-year]');
   if (el) el.textContent = new Date().getFullYear();
 }
-
-/* ── Carga de datos (una sola petición para ambas secciones) ── */
 
 async function loadData() {
   mostrarEstado(GALLERIES.tareas.galleryId, 'cargando');
@@ -87,12 +73,9 @@ async function loadData() {
   }
 }
 
-// Filas sin columna "categoria" se consideran "tarea" (retrocompatibilidad).
 function normalizarCategoria(categoria) {
   return (categoria || 'tarea').toLowerCase().trim();
 }
-
-/* ── Actualizar card de Tareas en la portada ──────────────── */
 
 function updateTareasCard(tareas) {
   const badge = document.querySelector('[data-tareas-badge]');
@@ -119,8 +102,6 @@ function updateTareasCard(tareas) {
     progress.parentElement?.setAttribute('aria-valuenow', porcentaje);
   }
 }
-
-/* ── Actualizar card de Otros Recursos en la portada ──────── */
 
 function updateRecursosCard(recursos) {
   const badge = document.querySelector('[data-recursos-badge]');
@@ -150,8 +131,6 @@ function updateRecursosCard(recursos) {
   }
 }
 
-/* ── Buscador (combinado con el filtro por tipo) ──────────── */
-
 function initSearchInputs() {
   const tareasInput = document.querySelector('[data-search="tareas"]');
   if (tareasInput) {
@@ -179,8 +158,6 @@ function aplicarBusqueda(items, query) {
   );
 }
 
-/* ── Filtrado y renderizado ───────────────────────────────── */
-
 function handleTareasFilterChange(filtro) {
   const filtradas = tareasFilter.filtrar(tareas, filtro);
   renderGallery(aplicarBusqueda(filtradas, tareasSearchQuery), GALLERIES.tareas.galleryId);
@@ -195,8 +172,6 @@ function applyCurrentFilters() {
   handleTareasFilterChange(tareasFilter.getCurrentFilter());
   handleRecursosFilterChange(recursosFilter.getCurrentFilter());
 }
-
-/* ── Cleanup ──────────────────────────────────────────────── */
 
 export function destroyAppController() {
   if (unsubscribeTareasFilter) {
