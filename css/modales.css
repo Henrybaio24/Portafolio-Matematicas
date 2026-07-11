@@ -1,8 +1,3 @@
-/* ============================================================
-   MODALES.CSS — Overlay, cajas, headers, galería, filtros, PDF
-   ============================================================ */
-
-/* ── 01. OVERLAY ──────────────────────────────────────────── */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -36,7 +31,6 @@
   align-items: stretch;
 }
 
-/* ── 02. CAJA ─────────────────────────────────────────────── */
 .modal-box {
   width: 100%;
   max-width: 720px;
@@ -78,7 +72,6 @@
   transform: translateY(0) scale(1);
 }
 
-/* ── 03. HEADER ───────────────────────────────────────────── */
 .modal-header {
   display: flex;
   align-items: center;
@@ -163,7 +156,6 @@
   transform: rotate(90deg);
 }
 
-/* ── 04. BODY ─────────────────────────────────────────────── */
 .modal-body {
   padding: var(--space-8);
   overflow-y: auto;
@@ -179,7 +171,6 @@
   padding: var(--space-6) var(--space-10);
 }
 
-/* ── Buscador dentro de los modales ───────────────────────── */
 .search-bar {
   display: flex;
   align-items: center;
@@ -212,8 +203,6 @@
   color: var(--color-text-muted);
 }
 
-/* Quitar el ícono nativo de "x" de los inputs type=search en Chrome/Safari
-   para usar un look consistente entre navegadores */
 .search-input::-webkit-search-cancel-button {
   cursor: pointer;
 }
@@ -227,7 +216,6 @@
 .modal-body::-webkit-scrollbar-thumb { background: var(--color-surface); border-radius: var(--radius-full); }
 .modal-body::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
 
-/* ── 05. IFRAME PDF ───────────────────────────────────────── */
 .pdf-iframe {
   width: 100%;
   flex: 1;
@@ -238,7 +226,6 @@
   display: block;
 }
 
-/* ── 06. GALERÍA ──────────────────────────────────────────── */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -255,7 +242,6 @@
   gap: var(--space-5);
 }
 
-/* ── 07. CARD DE GALERÍA ──────────────────────────────────── */
 .gallery-card {
   display: flex;
   flex-direction: column;
@@ -273,7 +259,6 @@
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
 }
 
-/* ── Animación de entrada (escalonada por tarjeta) ────────── */
 @keyframes card-fade-in {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -315,7 +300,6 @@
   outline-offset: 3px;
 }
 
-/* ── 08. IMAGEN CARD ──────────────────────────────────────── */
 .gallery-card__image {
   width: 100%;
   height: 140px;
@@ -355,7 +339,6 @@
   transform: scale(1.07);
 }
 
-/* ── 09. THUMBNAIL CON IMAGEN (liviana, no iframe) ────────── */
 .gallery-card__image--thumb {
   position: relative;
   overflow: hidden;
@@ -409,7 +392,6 @@
   font-weight: 500;
 }
 
-/* ── 10. HOVER "VER" ──────────────────────────────────────── */
 .gallery-card__view-overlay {
   position: absolute;
   inset: 0;
@@ -447,7 +429,6 @@
   transform: translateY(0);
 }
 
-/* ── 11. TIPO TAG ─────────────────────────────────────────── */
 .gallery-card__type-tag {
   margin-left: auto;
   font-size: 10.5px;
@@ -470,7 +451,6 @@
   border: 1px solid rgba(52, 211, 153, 0.18);
 }
 
-/* ── 12. BODY Y FOOTER CARD ───────────────────────────────── */
 .gallery-card__body {
   padding: var(--space-4) var(--space-5) 0;
   display: flex;
@@ -514,7 +494,6 @@
   flex-shrink: 0;
 }
 
-/* ── 13. ESTADO VACÍO ─────────────────────────────────────── */
 .gallery-empty {
   position: absolute;
   inset: 0;
@@ -562,7 +541,6 @@
   opacity: 0.6;
 }
 
-/* ── 14. FILTROS (versión modal) ──────────────────────────── */
 .filter-bar {
   display: flex;
   gap: var(--space-1);
@@ -599,7 +577,6 @@
   border: 1px solid rgba(96, 165, 250, 0.22);
 }
 
-/* ── 15. TAGS — RECURSOS (Resumen / Apuntes) ──────────────── */
 .gallery-card__type-tag--resumen {
   background: rgba(251, 191, 36, 0.10);
   color: #fbbf24;
@@ -612,7 +589,6 @@
   border: 1px solid rgba(167, 139, 250, 0.18);
 }
 
-/* ── 16. SPINNER PDF ──────────────────────────────────────── */
 #silabo-modal-body {
   position: relative;
 }
@@ -655,7 +631,6 @@
   visibility: hidden;
 }
 
-/* ── 17. RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 640px) {
   .modal-overlay {
     padding: 0;
@@ -737,7 +712,6 @@
   }
 }
 
-/* ── 18. REDUCED MOTION ───────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .modal-overlay, .modal-box, .gallery-card, .filter-tab, .modal-close {
     transition: none !important;
