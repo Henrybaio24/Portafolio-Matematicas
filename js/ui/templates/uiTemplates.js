@@ -1,10 +1,4 @@
-/* ============================================================
-   UI_TEMPLATES.JS — Generadores de HTML puro (sin side effects)
-   ============================================================ */
-
 import { SVG_INDIVIDUAL, SVG_GRUPAL, SVG_RESUMEN, SVG_APUNTES, SVG_CAL } from '../../data/config.js';
-
-/* ── Helpers privados ─────────────────────────────────────── */
 
 function extraerIdDrive(url) {
   if (!url) return null;
@@ -26,8 +20,6 @@ function getTipoInfo(tipo) {
   return TIPO_INFO[tipo] || TIPO_INFO.individual;
 }
 
-/* ── Público: utilidades de URL ───────────────────────────── */
-
 export function convertirPdfDrive(url) {
   const id = extraerIdDrive(url);
   return id ? `https://drive.google.com/file/d/${id}/preview` : url;
@@ -41,18 +33,12 @@ export function getFileId(tarea) {
   return tarea.pdf ? extraerIdDrive(tarea.pdf) : null;
 }
 
-/* ── Público: builders de HTML ────────────────────────────── */
-
 export function buildImageZone(tarea) {
   const fileId = getFileId(tarea);
   const tipoInfo = getTipoInfo(tarea.tipo);
   const tieneContenido = Boolean(tarea.pdf && tarea.pdf.trim().length > 0);
 
   if (!fileId) {
-    // Sin miniatura de Drive (o sin contenido) → ícono SVG de respaldo.
-    // Si SÍ hay contenido (ej. un resumen HTML local, que no tiene
-    // fileId de Drive), igual mostramos el overlay "Ver" porque la
-    // tarjeta ES clickeable — antes se perdía justo en este caso.
     return `
       <div class="gallery-card__image" aria-hidden="true">
         ${tipoInfo.svg}
@@ -60,11 +46,6 @@ export function buildImageZone(tarea) {
       </div>`;
   }
 
-  // Miniatura liviana (imagen, NO iframe del visor de PDF).
-  // Cargar un iframe del visor completo por cada tarjeta era lo que
-  // hacía lenta la página cuando había varios elementos: cada iframe
-  // arrastra el visor de PDF entero de Drive. Una <img> con el
-  // thumbnail de Drive pesa una fracción de eso.
   const thumbUrl = getThumbnailDrive(fileId);
 
   return `
@@ -104,14 +85,11 @@ function buildViewOverlay() {
 }
 
 export function buildCard(tarea) {
-  // Acepta tanto links de Drive (http...) como rutas locales a un HTML
-  // propio de resumen (ej: "resumenes/unidad-1.html").
   const tieneContenido = Boolean(tarea.pdf && tarea.pdf.trim().length > 0);
   const esLinkExterno = tieneContenido && tarea.pdf.startsWith('http');
   const pdfUrl = tieneContenido
     ? (esLinkExterno ? convertirPdfDrive(tarea.pdf) : tarea.pdf.trim())
     : '';
-  // 'pdf' → se abre dentro del modal (visor actual). 'html' → pantalla completa.
   const contentTipo = esLinkExterno ? 'pdf' : 'html';
   const tipoInfo = getTipoInfo(tarea.tipo);
 
