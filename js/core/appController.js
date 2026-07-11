@@ -24,6 +24,8 @@ const recursosFilter = createFilterManager('todos');
 
 let tareas = [];
 let recursos = [];
+let tareasSearchQuery = '';
+let recursosSearchQuery = '';
 let unsubscribeTareasFilter = null;
 let unsubscribeRecursosFilter = null;
 
@@ -45,6 +47,8 @@ export function initAppController() {
 
   unsubscribeRecursosFilter = recursosFilter.initFilterBar('#modal-recursos .filter-bar', handleRecursosFilterChange);
   recursosFilter.subscribe(handleRecursosFilterChange);
+
+  initSearchInputs();
 
   loadData();
 }
@@ -146,14 +150,45 @@ function updateRecursosCard(recursos) {
   }
 }
 
+/* ── Buscador (combinado con el filtro por tipo) ──────────── */
+
+function initSearchInputs() {
+  const tareasInput = document.querySelector('[data-search="tareas"]');
+  if (tareasInput) {
+    tareasInput.addEventListener('input', (e) => {
+      tareasSearchQuery = e.target.value.trim();
+      handleTareasFilterChange(tareasFilter.getCurrentFilter());
+    });
+  }
+
+  const recursosInput = document.querySelector('[data-search="recursos"]');
+  if (recursosInput) {
+    recursosInput.addEventListener('input', (e) => {
+      recursosSearchQuery = e.target.value.trim();
+      handleRecursosFilterChange(recursosFilter.getCurrentFilter());
+    });
+  }
+}
+
+function aplicarBusqueda(items, query) {
+  if (!query) return items;
+  const q = query.toLowerCase();
+  return items.filter(t =>
+    (t.titulo || '').toLowerCase().includes(q) ||
+    (t.desc || '').toLowerCase().includes(q)
+  );
+}
+
 /* ── Filtrado y renderizado ───────────────────────────────── */
 
 function handleTareasFilterChange(filtro) {
-  renderGallery(tareasFilter.filtrar(tareas, filtro), GALLERIES.tareas.galleryId);
+  const filtradas = tareasFilter.filtrar(tareas, filtro);
+  renderGallery(aplicarBusqueda(filtradas, tareasSearchQuery), GALLERIES.tareas.galleryId);
 }
 
 function handleRecursosFilterChange(filtro) {
-  renderGallery(recursosFilter.filtrar(recursos, filtro), GALLERIES.recursos.galleryId);
+  const filtrados = recursosFilter.filtrar(recursos, filtro);
+  renderGallery(aplicarBusqueda(filtrados, recursosSearchQuery), GALLERIES.recursos.galleryId);
 }
 
 function applyCurrentFilters() {

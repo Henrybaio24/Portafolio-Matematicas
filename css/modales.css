@@ -179,6 +179,45 @@
   padding: var(--space-6) var(--space-10);
 }
 
+/* ── Buscador dentro de los modales ───────────────────────── */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.65rem 1rem;
+  margin-bottom: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: border-color var(--transition-fast);
+}
+
+.search-bar:focus-within {
+  border-color: var(--color-border-hover);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Quitar el ícono nativo de "x" de los inputs type=search en Chrome/Safari
+   para usar un look consistente entre navegadores */
+.search-input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
 #modal-silabo .modal-body {
   padding: var(--space-4);
 }
@@ -232,6 +271,34 @@
   transform: translateY(-4px);
   border-color: var(--color-border-hover);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Animación de entrada (escalonada por tarjeta) ────────── */
+@keyframes card-fade-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-card {
+  animation: card-fade-in 480ms var(--ease-out) both;
+}
+
+.gallery-card:nth-child(1)  { animation-delay: 0ms;   }
+.gallery-card:nth-child(2)  { animation-delay: 40ms;  }
+.gallery-card:nth-child(3)  { animation-delay: 80ms;  }
+.gallery-card:nth-child(4)  { animation-delay: 120ms; }
+.gallery-card:nth-child(5)  { animation-delay: 160ms; }
+.gallery-card:nth-child(6)  { animation-delay: 200ms; }
+.gallery-card:nth-child(7)  { animation-delay: 240ms; }
+.gallery-card:nth-child(8)  { animation-delay: 280ms; }
+.gallery-card:nth-child(9)  { animation-delay: 320ms; }
+.gallery-card:nth-child(10) { animation-delay: 360ms; }
+.gallery-card:nth-child(n+11) { animation-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card {
+    animation: none;
+  }
 }
 
 .gallery-card--clickable {

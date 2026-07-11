@@ -46,12 +46,17 @@ export function getFileId(tarea) {
 export function buildImageZone(tarea) {
   const fileId = getFileId(tarea);
   const tipoInfo = getTipoInfo(tarea.tipo);
+  const tieneContenido = Boolean(tarea.pdf && tarea.pdf.trim().length > 0);
 
   if (!fileId) {
-    // Sin PDF → SVG de respaldo
+    // Sin miniatura de Drive (o sin contenido) → ícono SVG de respaldo.
+    // Si SÍ hay contenido (ej. un resumen HTML local, que no tiene
+    // fileId de Drive), igual mostramos el overlay "Ver" porque la
+    // tarjeta ES clickeable — antes se perdía justo en este caso.
     return `
       <div class="gallery-card__image" aria-hidden="true">
         ${tipoInfo.svg}
+        ${tieneContenido ? buildViewOverlay() : ''}
       </div>`;
   }
 
@@ -81,6 +86,12 @@ export function buildImageZone(tarea) {
 
       <div class="gallery-card__overlay"></div>
 
+      ${buildViewOverlay()}
+    </div>`;
+}
+
+function buildViewOverlay() {
+  return `
       <div class="gallery-card__view-overlay">
         <span class="gallery-card__view-text">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -89,8 +100,7 @@ export function buildImageZone(tarea) {
           </svg>
           Ver
         </span>
-      </div>
-    </div>`;
+      </div>`;
 }
 
 export function buildCard(tarea) {
