@@ -1,7 +1,3 @@
-/* ============================================================
-   CONFIG.JS — Constantes globales y SVGs de respaldo
-   ============================================================ */
-
 export const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTrJF4uUEcLDRF5u0DCyg3Ttt4iA7AdWuKvo8lsz7gb8_qHAGu_DsqPjoM5WQpFDyj8NjIx5uPxlQGA/pub?gid=0&single=true&output=csv';
 
 export const SVG_INDIVIDUAL = `
@@ -40,7 +36,6 @@ export const SVG_APUNTES = `
     <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
   </svg>`;
 
-// Estados de UI predefinidos, agrupados por galería
 export const UI_STATES = {
   tareas: {
     cargando: {
