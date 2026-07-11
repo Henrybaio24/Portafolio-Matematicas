@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 3 - Integracion Numerica</title>
+<!-- Reutiliza el mismo CSS de la Unidad 1 -->
+<link rel="stylesheet" href="./css/styles.css">
+<base target="_blank">
+</head>
+<body>
+
+<div class="u1-wrapper">
+
+  <div class="u1-hero">
+    <div class="u1-badge">Unidad 3</div>
+    <h1>Integracion Numerica</h1>
+    <div class="u1-subtitle">Matematica IV - UCE - Pedagogia de las Ciencias Experimentales</div>
+  </div>
+
+  <div class="u1-resultado">
+    <div class="u1-resultado-label">🎯 Resultado de Aprendizaje</div>
+    <div class="u1-resultado-text">Comprende la conceptualizacion de la integracion numerica con caracter cientifico.</div>
+  </div>
+
+  <div class="u1-section-title">Contenidos</div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c1">01</div>
+      <div class="u1-card-title">Regla del Trapecio</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">La <strong>regla del trapecio</strong> es un metodo de integracion numerica que aproxima el area bajo una curva mediante trapecios. Se basa en aproximar la funcion por segmentos lineales entre puntos consecutivos.</div>
+
+      <div class="u1-img-container">
+        <img src="https://kimi-web-img.moonshot.cn/img/www.neurochispas.com/9f57868b09da36239040aaffc31e2c18a21fe4ea.jpg" alt="Regla del trapecio - aproximacion grafica">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Aspecto</th><th>Descripcion</th><th>Formula</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Definicion</strong></td><td>Aproxima el area bajo la curva usando trapecios</td><td>∫[a,b] f(x)dx ≈ (h/2)[f(x₀) + 2Σf(xᵢ) + f(xₙ)]</td></tr>
+            <tr><td><strong>Paso h</strong></td><td>Distancia entre puntos equidistantes</td><td>h = (b - a)/n</td></tr>
+            <tr><td><strong>Error</strong></td><td>Error de truncamiento proporcional a h²</td><td>E = -(b-a)h²f''(ξ)/12</td></tr>
+            <tr><td><strong>Aplicacion</strong></td><td>Funciones suaves, intervalos pequeños</td><td>n subintervalos</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="u1-card-desc"><strong>Procedimiento:</strong><br>• Definir los limites de integracion a y b<br>• Determinar el numero de subintervalos n<br>• Calcular h = (b - a)/n<br>• Evaluar la funcion en cada punto xᵢ<br>• Aplicar la formula del trapecio<br>• Estimar el error si es necesario</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Clase expositiva dialogada sobre el fundamento de la integracion numerica y la regla del trapecio.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Areas con Modelos Reciclados: calculo de areas mediante trapecios.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicios individuales de calculo e interpretacion grafica de resultados.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>GeoGebra, Excel, calculadora cientifica.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c2">02</div>
+      <div class="u1-card-title">Regla de Simpson</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">La <strong>regla de Simpson</strong> aproxima la funcion mediante parabolas (polinomios de grado 2) en lugar de rectas. Existen dos variantes: Simpson 1/3 (requiere n par) y Simpson 3/8 (requiere n multiplo de 3).</div>
+
+      <div class="u1-img-container">
+        <img src="https://kimi-web-img.moonshot.cn/img/upload.wikimedia.org/2eb25d74b1b0bf244d9c7c090aa37844f23b6430.png" alt="Regla de Simpson - aproximacion parabolica">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Variante</th><th>Descripcion</th><th>Formula</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Simpson 1/3</strong></td><td>Usa parabolas, requiere n par</td><td>∫f(x)dx ≈ (h/3)[f(x₀) + 4Σf(xᵢmpares) + 2Σf(xᵢpares) + f(xₙ)]</td></tr>
+            <tr><td><strong>Simpson 3/8</strong></td><td>Usa cubicas, requiere n multiplo de 3</td><td>∫f(x)dx ≈ (3h/8)[f(x₀) + 3Σf(x₁,x₂) + 2Σf(x₃) + f(xₙ)]</td></tr>
+            <tr><td><strong>Error 1/3</strong></td><td>Error proporcional a h⁴</td><td>E = -(b-a)h⁴f⁽⁴⁾(ξ)/180</td></tr>
+            <tr><td><strong>Ventaja</strong></td><td>Mayor precision que el trapecio</td><td>Convergencia mas rapida</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="https://kimi-web-img.moonshot.cn/img/www.lifeder.com/6f1e83edfae1099e341c4d4f13e0058454403e8f.jpg" alt="Formula y demostracion regla de Simpson">
+      </div>
+
+      <p class="u1-card-desc"><strong>Procedimiento Simpson 1/3:</strong><br>• Verificar que n sea par<br>• Calcular h = (b - a)/n<br>• Evaluar f(x) en todos los puntos<br>• Aplicar coeficientes: 1, 4, 2, 4, 2, ..., 4, 1<br>• Multiplicar por h/3<br>• La precision es mayor que el trapecio</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Explicacion con ejemplos de la regla de Simpson y sus variantes (1/3 y 3/8).</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Areas con Modelos Reciclados: del Trapecio a Simpson.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicios autonomos de integracion con Simpson en distintos intervalos.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Software CAS (WolframAlpha, Maxima, MATLAB).</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c3">03</div>
+      <div class="u1-card-title">Formulas de Newton-Cotes</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Las <strong>formulas de Newton-Cotes</strong> son una familia de metodos de integracion numerica basados en la interpolacion polinomica. Incluyen al trapecio y Simpson como casos particulares, usando polinomios de mayor grado.</div>
+
+      <div class="u1-img-container">
+        <img src="./assets/3.1.png" alt="Formulas de integracion de Newton-Cotes">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Formula</th><th>Grado del polinomio</th><th>Puntos</th><th>Error</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Trapecio</strong></td><td>1 (lineal)</td><td>2</td><td>O(h²)</td></tr>
+            <tr><td><strong>Simpson 1/3</strong></td><td>2 (cuadratico)</td><td>3</td><td>O(h⁴)</td></tr>
+            <tr><td><strong>Simpson 3/8</strong></td><td>3 (cubico)</td><td>4</td><td>O(h⁴)</td></tr>
+            <tr><td><strong>Boole</strong></td><td>4 (cuartico)</td><td>5</td><td>O(h⁶)</td></tr>
+            <tr><td><strong>General</strong></td><td>n</td><td>n+1</td><td>Depende de la paridad</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="./assets/3.2.png" alt="Deduccion de la regla del trapecio - Newton-Cotes">
+      </div>
+
+      <p class="u1-card-desc"><strong>Caracteristicas generales:</strong><br>• Basadas en interpolacion polinomica de Lagrange<br>• Los puntos son equidistantes<br>• A mayor grado del polinomio, mayor precision<br>• Pueden presentar oscilaciones (fenomeno de Runge)<br>• Para n alto es preferible usar cuadratura gaussiana</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Clase demostrativa de las formulas de Newton-Cotes (interpolacion polinomica e integracion).</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Aproximaciones Polinomicas con Modelos Reciclados: de Newton-Cotes a Gauss.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicio autonomo: redaccion de un esquema comparativo entre Newton-Cotes y Simpson.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Presentaciones interactivas, Excel, Python (Jupyter Notebook).</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c4">04</div>
+      <div class="u1-card-title">Cuadratura de Gauss</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">La <strong>cuadratura de Gauss</strong> es un metodo de integracion numerica que selecciona optimalmente los puntos de evaluacion (no equidistantes) y sus pesos. Es mas precisa que Newton-Cotes para el mismo numero de puntos.</div>
+
+      <div class="u1-img-container">
+        <img src="./assets/4.png" alt="Cuadratura Gaussiana - formulas y cambio de variable">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Aspecto</th><th>Descripcion</th><th>Detalle</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Fundamento</strong></td><td>Polinomios ortogonales de Legendre</td><td>Puntos raices de Legendre</td></tr>
+            <tr><td><strong>Intervalo</strong></td><td>Se transforma [-1, 1] a [a, b]</td><td>x = [(b-a)t + (a+b)]/2</td></tr>
+            <tr><td><strong>Formula</strong></td><td>Suma ponderada de evaluaciones</td><td>∫f(x)dx ≈ Σ wᵢf(xᵢ)</td></tr>
+            <tr><td><strong>Ventaja</strong></td><td>Exacta para polinomios hasta grado 2n-1</td><td>Mayor precision con menos puntos</td></tr>
+            <tr><td><strong>Aplicacion</strong></td><td>Integrales complejas, alta precision</td><td>MATLAB, Python (NumPy, SciPy)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="./assets/4.1.jpg" alt="Comparacion trapecio vs Simpson - ejercicio resuelto">
+      </div>
+
+      <p class="u1-card-desc"><strong>Procedimiento:</strong><br>• Transformar el intervalo [a,b] a [-1,1]<br>• Seleccionar el numero de puntos n<br>• Obtener los nodos xᵢ y pesos wᵢ de las tablas de Gauss-Legendre<br>• Evaluar la funcion en los nodos transformados<br>• Calcular la suma ponderada Σ wᵢf(xᵢ)<br>• Aplicar el factor de escala (b-a)/2</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Exposicion guiada sobre cuadratura de Gauss y su ventaja frente a otros metodos.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Aproximaciones Polinomicas con Modelos Reciclados: de Newton-Cotes a Gauss (continuacion).</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicios individuales de integracion aplicando cuadratura de Gauss en software.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>MATLAB, Octave, bibliotecas de Python (NumPy, SciPy).</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-section-title">Habilidades Blandas Desarrolladas</div>
+  <div class="u1-skills">
+    <div class="u1-skill"><div class="u1-skill-icon">🧠</div><div class="u1-skill-name">Resolucion de problemas</div><div class="u1-skill-cat">Cognitivas</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🤝</div><div class="u1-skill-name">Liderazgo</div><div class="u1-skill-cat">Interpersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">✅</div><div class="u1-skill-name">Responsabilidad</div><div class="u1-skill-cat">Intrapersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🔍</div><div class="u1-skill-name">Critica y Autocritica</div><div class="u1-skill-cat">Emocionales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">⚖️</div><div class="u1-skill-name">Honestidad</div><div class="u1-skill-cat">Eticas y Esteticas</div></div>
+  </div>
+
+  <div class="u1-footer">
+    <strong>📍 Universidad Central del Ecuador</strong><br>
+    Facultad de Filosofia, Letras y Ciencias de la Educacion<br>
+    Pedagogia de las Ciencias Experimentales - Informatica | Abril-Julio 2026<br><br>
+    <em>Docente: MSc. Luis Alberto Zapata Villacis</em>
+  </div>
+
+</div>
+
+</body>
+</html>

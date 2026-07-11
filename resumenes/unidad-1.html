@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 1 - Introduccion a las Ecuaciones Diferenciales</title>
+<link rel="stylesheet" href="./css/styles.css">
+<base target="_blank">
+</head>
+<body>
+
+<div class="u1-wrapper">
+
+  <div class="u1-hero">
+    <div class="u1-badge">Unidad 1</div>
+    <h1>Introduccion a las Ecuaciones Diferenciales</h1>
+    <div class="u1-subtitle">Matematica IV | UCE - Pedagogia de las Ciencias Experimentales</div>
+  </div>
+
+  <div class="u1-resultado">
+    <div class="u1-resultado-label">🎯 Resultado de Aprendizaje</div>
+    <div class="u1-resultado-text">Comprende la conceptualizacion de una ecuacion diferencial con rigor cientifico.</div>
+  </div>
+
+  <div class="u1-section-title">Contenidos Programaticos</div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c1">01</div>
+      <div class="u1-card-title">Definiciones Basicas y Terminologia</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Una <strong>ecuacion diferencial (ED)</strong> es una ecuacion que relaciona una funcion desconocida con una o mas de sus derivadas respecto a una o mas variables independientes.</div>
+
+      <!-- IMAGEN 1: Clasificacion -->
+      <div class="u1-img-container">
+        <img src="https://kimi-web-img.moonshot.cn/img/blogs.ugto.mx/bc79ee2c2c154ca888c2556d228434593e8d4072.png" alt="Clasificacion de ecuaciones diferenciales">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Aspecto</th><th>Tipos</th><th>Descripcion</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tipo</strong></td><td>Ordinaria (EDO)</td><td>Derivadas ordinarias, una sola variable independiente</td></tr>
+            <tr><td></td><td>Parcial (EDP)</td><td>Derivadas parciales, dos o mas variables independientes</td></tr>
+            <tr><td><strong>Orden</strong></td><td>1°, 2°, 3°...</td><td>Determinado por la derivada de mayor grado</td></tr>
+            <tr><td><strong>Grado</strong></td><td>1, 2, 3...</td><td>Potencia de la derivada de mayor orden</td></tr>
+            <tr><td><strong>Linealidad</strong></td><td>Lineal</td><td>Funcion y derivadas en primer grado, sin productos entre ellas</td></tr>
+            <tr><td></td><td>No lineal</td><td>Cualquier otra forma</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="u1-card-desc"><strong>Conceptos clave:</strong><br>• <strong>Solucion general</strong>: Familia de curvas que satisfacen la ecuacion (contiene constantes arbitrarias).<br>• <strong>Solucion particular</strong>: Curva especifica obtenida al asignar valores a las constantes.<br>• <strong>Campo de direcciones</strong>: Representacion grafica de las pendientes de las soluciones en el plano.</p>
+
+      <div class="u1-svg-pair">
+        <div>
+          <div class="u1-img-box">
+            <img src="https://kimi-web-img.moonshot.cn/img/blog.nekomath.com/1bf275a9ed0c9dcc02ac0ad9e4f74f9c619abb1c.png" alt="Campo de direcciones">
+          </div>
+          <div class="u1-img-caption">Campo de direcciones con curva solucion</div>
+        </div>
+        <div>
+          <div class="u1-img-box">
+            <img src="https://kimi-web-img.moonshot.cn/img/ecuaciondiferencialejerciciosresueltos.com/63031d2ed82f9dcbca35d716265d95a196240b70.png" alt="Solucion general vs particular">
+          </div>
+          <div class="u1-img-caption">Solucion general (familia) vs Solucion particular (unica)</div>
+        </div>
+      </div>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Clase expositiva dialogada sobre definiciones basicas y terminologia de ecuaciones diferenciales.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Modelos Dinamicos con Material Reciclado: Resolviendo Problemas de Valor Inicial.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Lectura individual y elaboracion de un glosario de terminos clave.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Pizarra digital, presentaciones interactivas, foros en Moodle.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c2">02</div>
+      <div class="u1-card-title">Problemas de Valor Inicial (PVI)</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Un <strong>problema de valor inicial</strong> consiste en una ecuacion diferencial junto con una o mas <strong>condiciones iniciales</strong> que especifican el valor de la funcion en un punto particular.</div>
+
+      <div class="u1-img-container">
+        <img src="https://kimi-web-img.moonshot.cn/img/www.geogebra.org/08961fe5061e93f39e19355137d8e40919af5912.png" alt="Problema de valor inicial">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Componente</th><th>Descripcion</th><th>Ejemplo</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ecuacion diferencial</strong></td><td>Relacion entre la funcion y sus derivadas</td><td>dy/dx = f(x, y)</td></tr>
+            <tr><td><strong>Condicion inicial</strong></td><td>Valor conocido de la funcion en un punto</td><td>y(x0) = y0</td></tr>
+            <tr><td><strong>Teorema de Picard-Lindelof</strong></td><td>Garantiza existencia y unicidad de la solucion</td><td>Requiere continuidad de f y ∂f/∂y</td></tr>
+            <tr><td><strong>Interpretacion geometrica</strong></td><td>Seleccionar una curva del campo de direcciones</td><td>Curva que pasa por (x0, y0)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="https://kimi-web-img.moonshot.cn/img/ecuaciondiferencialejerciciosresueltos.com/6c4e39932c921c686e88a3032a531618242bc587.png" alt="Teorema de Picard-Lindelof">
+      </div>
+
+      <p class="u1-card-desc"><strong>Teorema de existencia y unicidad:</strong> Si f(x, y) y ∂f/∂y son continuas en una region que contiene al punto (x0, y0), entonces existe una <strong>unica solucion</strong> del PVI en algun intervalo alrededor de x0.</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Explicacion guiada sobre problemas de valor inicial.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Modelos Dinamicos con Material Reciclado (continuacion).</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicios autonomos con problemas asignados.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Software WolframAlpha, GeoGebra.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c3">03</div>
+      <div class="u1-card-title">Ecuaciones Diferenciales como Modelo Matematico</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">La <strong>modelacion matematica</strong> es el proceso de traducir fenomenos reales del mundo fisico, biologico, social o educativo al lenguaje de las ecuaciones diferenciales.</div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Etapas del Modelado</th><th>Descripcion</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. Identificacion</strong></td><td>Reconocer variables y parametros relevantes del fenomeno</td></tr>
+            <tr><td><strong>2. Hipotesis</strong></td><td>Establecer simplificaciones y supuestos del modelo</td></tr>
+            <tr><td><strong>3. Formulacion</strong></td><td>Construir la ecuacion diferencial que describe el fenomeno</td></tr>
+            <tr><td><strong>4. Resolucion</strong></td><td>Obtener la solucion analitica o numerica</td></tr>
+            <tr><td><strong>5. Validacion</strong></td><td>Comparar resultados con datos experimentales o reales</td></tr>
+            <tr><td><strong>6. Interpretacion</strong></td><td>Analizar el significado de la solucion en el contexto original</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container">
+        <img src="./assets/1.jpg" alt="Aplicaciones de ecuaciones diferenciales">
+      </div>
+
+      <div class="u1-table-wrap" style="margin-top: 16px;">
+        <table class="u1-table">
+          <thead><tr><th>Area</th><th>Fenomeno Modelado</th><th>Ecuacion Tipica</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Fisica</strong></td><td>Ley de enfriamiento de Newton</td><td>dT/dt = -k(T - Ta)</td></tr>
+            <tr><td><strong>Fisica</strong></td><td>Circuitos RC/RL</td><td>dQ/dt + Q/RC = E/R</td></tr>
+            <tr><td><strong>Biologia</strong></td><td>Crecimiento poblacional</td><td>dP/dt = kP</td></tr>
+            <tr><td><strong>Biologia</strong></td><td>Modelo logistico</td><td>dP/dt = kP(1 - P/M)</td></tr>
+            <tr><td><strong>Epidemiologia</strong></td><td>Propagacion de enfermedades</td><td>Modelos SIR</td></tr>
+            <tr><td><strong>Educacion</strong></td><td>Contextualizacion didactica</td><td>Adaptaciones de modelos fisicos</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Clase demostrativa sobre ecuaciones diferenciales como modelos matematicos.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Modelos Fisicos con Reciclaje: Aplicando Ecuaciones Diferenciales a Fenomenos Reales.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Redaccion autonoma de un esquema de modelo propio.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Excel, Python (Jupyter Notebook), simuladores PhET.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c4">04</div>
+      <div class="u1-card-title">Problemas de Aplicacion</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Los problemas de aplicacion implican resolver situaciones reales de distintas areas utilizando ecuaciones diferenciales, analizar criticamente los resultados y elaborar modelos propios.</div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Competencia</th><th>Descripcion</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Resolucion contextualizada</strong></td><td>Aplicar metodos de solucion a situaciones reales de distintas areas</td></tr>
+            <tr><td><strong>Analisis critico</strong></td><td>Evaluar si los resultados obtenidos son razonables frente al fenomeno modelado</td></tr>
+            <tr><td><strong>Elaboracion de modelos propios</strong></td><td>Construir esquemas y ecuaciones a partir de descripciones de situaciones problema</td></tr>
+            <tr><td><strong>Comunicacion de resultados</strong></td><td>Expresar conclusiones del modelo en lenguaje comprensible para el contexto educativo</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="u1-card-desc"><strong>Habilidades desarrolladas:</strong><br>• Identificar variables y relaciones en un fenomeno dado<br>• Formular ecuaciones diferenciales a partir de enunciados<br>• Resolver y verificar soluciones<br>• Interpretar el significado fisico o contextual de las constantes y funciones obtenidas</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Exposicion de casos practicos de aplicacion en fenomenos fisicos y educativos.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Modelos Fisicos con Reciclaje (continuacion).</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ensayo corto de aplicacion en un area de interes personal.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Articulos cientificos en linea, bases de datos educativas.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-section-title">Habilidades Blandas Desarrolladas</div>
+  <div class="u1-skills">
+    <div class="u1-skill"><div class="u1-skill-icon">🧠</div><div class="u1-skill-name">Resolucion de problemas</div><div class="u1-skill-cat">Cognitivas</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🤝</div><div class="u1-skill-name">Liderazgo</div><div class="u1-skill-cat">Interpersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">✅</div><div class="u1-skill-name">Responsabilidad</div><div class="u1-skill-cat">Intrapersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🔍</div><div class="u1-skill-name">Critica y Autocritica</div><div class="u1-skill-cat">Emocionales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">⚖️</div><div class="u1-skill-name">Honestidad</div><div class="u1-skill-cat">Eticas y Esteticas</div></div>
+  </div>
+
+  <div class="u1-footer">
+    <strong>📍 Universidad Central del Ecuador</strong><br>
+    Facultad de Filosofia, Letras y Ciencias de la Educacion<br>
+    Pedagogia de las Ciencias Experimentales - Informatica | Abril-Julio 2026<br><br>
+    <em>Docente: MSc. Luis Alberto Zapata Villacis</em>
+  </div>
+
+</div>
+
+</body>
+</html>

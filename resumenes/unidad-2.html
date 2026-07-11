@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 2 - Ecuaciones Diferenciales de Primer Orden</title>
+<!-- Reutiliza el mismo CSS de la Unidad 1 -->
+<link rel="stylesheet" href="./css/styles.css">
+<base target="_blank">
+</head>
+<body>
+
+<div class="u1-wrapper">
+
+  <div class="u1-hero">
+    <div class="u1-badge">Unidad 2</div>
+    <h1>Ecuaciones Diferenciales de Primer Orden</h1>
+    <div class="u1-subtitle">Matematica IV - UCE - Pedagogia de las Ciencias Experimentales</div>
+  </div>
+
+  <div class="u1-resultado">
+    <div class="u1-resultado-label">🎯 Resultado de Aprendizaje</div>
+    <div class="u1-resultado-text">Diferencia los metodos de solucion de ecuaciones diferenciales de primer orden con caracter cientifico.</div>
+  </div>
+
+  <div class="u1-section-title">Contenidos</div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c1">01</div>
+      <div class="u1-card-title">Ecuaciones Diferenciales de Variables Separables</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Una <strong>ecuacion diferencial de variables separables</strong> es aquella que puede expresarse en la forma dy/dx = g(x)h(y), permitiendo separar las variables en lados distintos de la ecuacion para integrar por separado.</div>
+
+      <div class="u1-img-container">
+        <img src="./assets/imagen2.1.png" alt="Ejercicios resueltos de variables separables">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Caracteristica</th><th>Descripcion</th><th>Forma General</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Definicion</strong></td><td>La ecuacion puede separarse en funciones de x y funciones de y</td><td>dy/dx = g(x)h(y)</td></tr>
+            <tr><td><strong>Metodo de solucion</strong></td><td>Separar variables e integrar ambos lados</td><td>∫ dy/h(y) = ∫ g(x)dx</td></tr>
+            <tr><td><strong>Condicion</strong></td><td>h(y) ≠ 0 para evitar division por cero</td><td>Soluciones singulares posibles</td></tr>
+            <tr><td><strong>Aplicaciones</strong></td><td>Modelos de crecimiento, decaimiento radiactivo, leyes de enfriamiento</td><td>dP/dt = kP, dT/dt = -k(T-Ta)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="u1-card-desc"><strong>Pasos para resolver:</strong><br>• Identificar si la ecuacion es separable<br>• Agrupar terminos con y y dy en un lado, x y dx en el otro<br>• Integrar ambos lados<br>• Despejar y si es posible<br>• Verificar la solucion sustituyendo en la ecuacion original</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Clase magistral con ejemplos guiados de resolucion paso a paso para cada tipo de ecuacion diferencial.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio: Modelando fenomenos reales con ecuaciones diferenciales: separables y homogeneas.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Elaboracion individual de un portafolio con ejercicios resueltos y reflexiones sobre los metodos utilizados.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Pizarra digital, software matematico (GeoGebra CAS, WolframAlpha, MATLAB), hojas de calculo en Excel.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c2">02</div>
+      <div class="u1-card-title">Ecuaciones Diferenciales Homogeneas</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Una <strong>ecuacion diferencial homogenea</strong> es aquella donde la funcion f(x,y) es homogenea del mismo grado, es decir, f(tx,ty) = tⁿf(x,y). Mediante la sustitucion v = y/x se transforma en una ecuacion de variables separables.</div>
+
+      <div class="u1-img-container">
+        <img src="https://kimi-web-img.moonshot.cn/img/image.slidesharecdn.com/aa9bd5f9067a0e42335ac740d0c948fb944d611e.jpg" alt="Metodo de solucion de ecuaciones homogeneas - sustitucion v = y/x">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Caracteristica</th><th>Descripcion</th><th>Ejemplo</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Definicion</strong></td><td>M(x,y)dx + N(x,y)dy = 0 donde M y N son homogeneas del mismo grado</td><td>(x² + y²)dx - xydy = 0</td></tr>
+            <tr><td><strong>Sustitucion</strong></td><td>v = y/x, por lo tanto y = vx y dy = vdx + xdv</td><td>dy/dx = v + x(dv/dx)</td></tr>
+            <tr><td><strong>Transformacion</strong></td><td>Se convierte en ecuacion separable en v y x</td><td>∫ dv/(f(v)-v) = ∫ dx/x</td></tr>
+            <tr><td><strong>Verificacion</strong></td><td>Comprobar que f(tx,ty) = f(x,y) para t ≠ 0</td><td>f(x,y) = (x²+y²)/(xy)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="https://kimi-web-img.moonshot.cn/img/blogger.googleusercontent.com/046f4eaadd4a600c47d1f44492767bd61512fa3f.PNG" alt="Ejemplo resuelto de ecuacion homogenea - Juan Beltran">
+      </div>
+
+      <p class="u1-card-desc"><strong>Estrategia de resolucion:</strong><br>• Verificar que M y N sean homogeneas del mismo grado<br>• Aplicar la sustitucion v = y/x<br>• Separar variables en terminos de v y x<br>• Integrar y sustituir de regreso v = y/x<br>• Obtener la solucion general</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Explicacion comparativa entre los distintos tipos de ecuaciones diferenciales y sus condiciones de aplicabilidad.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio: Modelando fenomenos reales con ecuaciones diferenciales: separables y homogeneas (continuacion).</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Resolucion autonoma de un cuestionario en Moodle con problemas de clasificacion.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Moodle/Google Classroom para cuestionarios interactivos, cuadernillos digitales de ejercicios.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c3">03</div>
+      <div class="u1-card-title">Ecuaciones Diferenciales Exactas</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Una <strong>ecuacion diferencial exacta</strong> tiene la forma M(x,y)dx + N(x,y)dy = 0 donde ∂M/∂y = ∂N/∂x. Existe una funcion potencial ψ(x,y) tal que dψ = Mdx + Ndy, y la solucion es ψ(x,y) = C.</div>
+
+      <div class="u1-img-container">
+        <img src="https://kimi-web-img.moonshot.cn/img/image.slidesharecdn.com/8da698ae34f7172a732fc0bef6ccd4acccf394d7.jpg" alt="Metodo de solucion de ecuaciones exactas - paso a paso">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Concepto</th><th>Descripcion</th><th>Condicion</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Exactitud</strong></td><td>La diferencial es exacta si proviene de una funcion potencial</td><td>∂M/∂y = ∂N/∂x</td></tr>
+            <tr><td><strong>Funcion potencial</strong></td><td>ψ(x,y) tal que ∂ψ/∂x = M y ∂ψ/∂y = N</td><td>ψ(x,y) = C</td></tr>
+            <tr><td><strong>Metodo de solucion</strong></td><td>Integrar M respecto a x, derivar respecto a y e igualar a N</td><td>Integracion parcial</td></tr>
+            <tr><td><strong>Factor integrante</strong></td><td>Si no es exacta, buscar μ(x) o μ(y) para hacerla exacta</td><td>μ depende solo de x o solo de y</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="u1-card-desc"><strong>Procedimiento de resolucion:</strong><br>• Verificar la condicion de exactitud ∂M/∂y = ∂N/∂x<br>• Si no es exacta, determinar el factor integrante<br>• Encontrar ψ(x,y) integrando M respecto a x<br>• Derivar ψ respecto a y e igualar a N para encontrar la funcion de integracion<br>• Escribir la solucion implicita ψ(x,y) = C</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Discusion dirigida sobre aplicaciones de ecuaciones diferenciales en fenomenos fisicos y educativos.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio: Modelos fisicos y electricos: exactitud y linealidad en ecuaciones diferenciales.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ensayo breve individual sobre una aplicacion real de ecuaciones diferenciales en su campo de estudio.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Videos demostrativos, articulos cientificos, simuladores PhET, recursos de YouTube educativos.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c4">04</div>
+      <div class="u1-card-title">Ecuaciones Diferenciales Lineales</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">Una <strong>ecuacion diferencial lineal de primer orden</strong> tiene la forma dy/dx + P(x)y = Q(x). Se resuelve mediante el <strong>factor integrante</strong> μ(x) = e^(∫P(x)dx), transformando la ecuacion en una diferencial exacta.</div>
+
+      <div class="u1-img-container">
+        <img src="./assets/2.4.webp" alt="Factor integrante: Metodo de 4 pasos">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Elemento</th><th>Descripcion</th><th>Formula</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Forma estandar</strong></td><td>Ecuacion lineal de primer orden</td><td>dy/dx + P(x)y = Q(x)</td></tr>
+            <tr><td><strong>Factor integrante</strong></td><td>Funcion que permite resolver la ecuacion</td><td>μ(x) = e^(∫P(x)dx)</td></tr>
+            <tr><td><strong>Solucion general</strong></td><td>Multiplicar por μ(x) e integrar</td><td>y = (1/μ)[∫μ·Q(x)dx + C]</td></tr>
+            <tr><td><strong>Ecuacion de Bernoulli</strong></td><td>Case no lineal reducible a lineal</td><td>dy/dx + P(x)y = Q(x)yⁿ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="u1-card-desc"><strong>Metodo de resolucion:</strong><br>• Escribir la ecuacion en forma estandar dy/dx + P(x)y = Q(x)<br>• Calcular el factor integrante μ(x) = e^(∫P(x)dx)<br>• Multiplicar toda la ecuacion por μ(x)<br>• El lado izquierdo se convierte en d/dx[μ(x)·y]<br>• Integrar ambos lados respecto a x<br>• Despejar y para obtener la solucion general</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Sesiones de resolucion colaborativa de problemas en clase.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de resolucion de problemas aplicados con ecuaciones lineales.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Autoevaluacion escrita sobre fortalezas y debilidades en la resolucion de cada tipo de ecuacion.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Foros virtuales, Jamboard colaborativo, calculadoras cientificas.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-section-title">Habilidades Blandas Desarrolladas</div>
+  <div class="u1-skills">
+    <div class="u1-skill"><div class="u1-skill-icon">🧠</div><div class="u1-skill-name">Resolucion de problemas</div><div class="u1-skill-cat">Cognitivas</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🤝</div><div class="u1-skill-name">Liderazgo</div><div class="u1-skill-cat">Interpersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">✅</div><div class="u1-skill-name">Responsabilidad</div><div class="u1-skill-cat">Intrapersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🔍</div><div class="u1-skill-name">Critica y Autocritica</div><div class="u1-skill-cat">Emocionales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">⚖️</div><div class="u1-skill-name">Honestidad</div><div class="u1-skill-cat">Eticas y Esteticas</div></div>
+  </div>
+
+  <div class="u1-footer">
+    <strong>📍 Universidad Central del Ecuador</strong><br>
+    Facultad de Filosofia, Letras y Ciencias de la Educacion<br>
+    Pedagogia de las Ciencias Experimentales - Informatica | Abril-Julio 2026<br><br>
+    <em>Docente: MSc. Luis Alberto Zapata Villacis</em>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 4 - Solucion de Ecuaciones No Lineales</title>
+<!-- Reutiliza el mismo CSS de la Unidad 1 -->
+<link rel="stylesheet" href="./css/styles.css">
+<base target="_blank">
+</head>
+<body>
+
+<div class="u1-wrapper">
+
+  <div class="u1-hero">
+    <div class="u1-badge">Unidad 4</div>
+    <h1>Solucion de Ecuaciones No Lineales</h1>
+    <div class="u1-subtitle">Matematica IV - UCE - Pedagogia de las Ciencias Experimentales</div>
+  </div>
+
+  <div class="u1-resultado">
+    <div class="u1-resultado-label">🎯 Resultado de Aprendizaje</div>
+    <div class="u1-resultado-text">Conceptualiza la raiz del polinomio con caracter cientifico.</div>
+  </div>
+
+  <div class="u1-section-title">Contenidos </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c1">01</div>
+      <div class="u1-card-title">Metodo de la Biseccion</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">El <strong>metodo de la biseccion</strong> es un metodo cerrado que encuentra la raiz de una ecuacion f(x) = 0 dividiendo repetidamente el intervalo [a,b] a la mitad. Se basa en el <strong>teorema del valor intermedio</strong>: si f(a)·f(b) < 0, existe al menos una raiz en el intervalo.</div>
+
+      <div class="u1-img-container">
+        <img src="./assets/5.1.png" alt="Ejemplo del metodo de biseccion - iteraciones paso a paso">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Aspecto</th><th>Descripcion</th><th>Detalle</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Condicion inicial</strong></td><td>f(a) y f(b) deben tener signos opuestos</td><td>f(a)·f(b) < 0</td></tr>
+            <tr><td><strong>Punto medio</strong></td><td>c = (a + b)/2</td><td>Divide el intervalo en dos</td></tr>
+            <tr><td><strong>Criterio de seleccion</strong></td><td>Evaluar f(c) y determinar en que subintervalo esta la raiz</td><td>Si f(a)·f(c) < 0, la raiz esta en [a,c]</td></tr>
+            <tr><td><strong>Convergencia</strong></td><td>Siempre converge si se cumple la condicion inicial</td><td>Lineal, error se reduce a la mitad cada iteracion</td></tr>
+            <tr><td><strong>Error</strong></td><td>Cota del error en la iteracion n</td><td>|Eₙ| ≤ (b-a)/2ⁿ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="https://kimi-web-img.moonshot.cn/img/blogger.googleusercontent.com/e75f7ec406bfd5feac761b71f5cfd3d1792224ca.jpg" alt="Convergencia del metodo de biseccion - grafica">
+      </div>
+
+      <p class="u1-card-desc"><strong>Algoritmo:</strong><br>• Verificar que f(a)·f(b) < 0<br>• Calcular el punto medio c = (a + b)/2<br>• Evaluar f(c)<br>• Si f(c) = 0 (o |f(c)| < ε), c es la raiz<br>• Si f(a)·f(c) < 0, la raiz esta en [a,c]; sino en [c,b]<br>• Repetir hasta alcanzar la tolerancia deseada</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Clase expositiva dialogada sobre el fundamento del metodo de biseccion y el teorema del valor intermedio.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Raices con Modelos Reciclados: implementacion del metodo de biseccion.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicios individuales de calculo e interpretacion grafica de resultados.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>GeoGebra, Excel, calculadora cientifica.</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c2">02</div>
+      <div class="u1-card-title">Metodo de Newton-Raphson</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">El <strong>metodo de Newton-Raphson</strong> es un metodo abierto que utiliza la derivada de la funcion para aproximar la raiz. Parte de una estimacion inicial x₀ y mejora la aproximacion usando la tangente a la curva en cada punto.</div>
+
+      <div class="u1-img-container">
+        <img src="./assets/5.3.png" alt="Ejercicios resueltos Newton-Raphson - paso a paso">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Aspecto</th><th>Descripcion</th><th>Formula</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Formula iterativa</strong></td><td>Usa la derivada para aproximar la raiz</td><td>xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)</td></tr>
+            <tr><td><strong>Requisito</strong></td><td>La funcion debe ser derivable</td><td>f'(x) ≠ 0 cerca de la raiz</td></tr>
+            <tr><td><strong>Convergencia</strong></td><td>Cuadratica (muy rapida)</td><td>|Eₙ₊₁| ≈ C·|Eₙ|²</td></tr>
+            <tr><td><strong>Desventaja</strong></td><td>Puede diverger si x₀ no es adecuado</td><td>Depende de la estimacion inicial</td></tr>
+            <tr><td><strong>Aplicacion</strong></td><td>Funciones suaves con derivada conocida</td><td>Sistemas no lineales (version multivariable)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="https://kimi-web-img.moonshot.cn/img/www.neurochispas.com/b13586fdfd34d9c94885c63c280282c77efbc1a1.jpg" alt="Newton-Raphson - tabla de iteraciones y convergencia">
+      </div>
+
+      <p class="u1-card-desc"><strong>Algoritmo:</strong><br>• Elegir una estimacion inicial x₀ cercana a la raiz<br>• Calcular f(xₙ) y f'(xₙ)<br>• Aplicar la formula xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)<br>• Evaluar el error |xₙ₊₁ - xₙ| o |f(xₙ₊₁)|<br>• Repetir hasta que el error sea menor que la tolerancia<br>• Verificar que la solucion sea valida</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Explicacion con ejemplos del metodo de Newton-Raphson y analisis de convergencia.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Raices con Modelos Reciclados: de la Biseccion a Newton.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicios autonomos de resolucion con Newton-Raphson en distintas funciones.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Software CAS (WolframAlpha, Maxima, MATLAB).</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c3">03</div>
+      <div class="u1-card-title">Metodo de la Secante</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">El <strong>metodo de la secante</strong> es una variante de Newton-Raphson que no requiere calcular la derivada. Aproxima la derivada mediante el cociente de diferencias finitas usando dos puntos consecutivos.</div>
+
+      <div class="u1-img-container">
+        <img src="https://kimi-web-img.moonshot.cn/img/www.uv.es/d9c1a7515f9c79e9bb7f66c0c1292216b15943a6.gif" alt="Metodo de la secante - aproximacion geometrica">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Aspecto</th><th>Descripcion</th><th>Formula</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Formula iterativa</strong></td><td>Aproxima la derivada con diferencias finitas</td><td>xₙ₊₁ = xₙ - f(xₙ)(xₙ - xₙ₋₁)/(f(xₙ) - f(xₙ₋₁))</td></tr>
+            <tr><td><strong>Ventaja</strong></td><td>No requiere calcular la derivada analiticamente</td><td>Menos costo computacional por iteracion</td></tr>
+            <tr><td><strong>Convergencia</strong></td><td>Superlineal (orden ≈ 1.618)</td><td>Mas lenta que Newton pero mas rapida que biseccion</td></tr>
+            <tr><td><strong>Requisitos</strong></td><td>Dos estimaciones iniciales x₀ y x₁</td><td>No necesitan encerrar la raiz</td></tr>
+            <tr><td><strong>Desventaja</strong></td><td>Puede diverger como Newton</td><td>Requiere dos evaluaciones por iteracion</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="https://kimi-web-img.moonshot.cn/img/estadistica-dma.ulpgc.es/2662260eaeab97562605c352f77804c1412f2c16.gif" alt="Convergencia del metodo de la secante">
+      </div>
+
+      <p class="u1-card-desc"><strong>Algoritmo:</strong><br>• Elegir dos estimaciones iniciales x₀ y x₁<br>• Calcular f(x₀) y f(x₁)<br>• Aplicar la formula de la secante para obtener x₂<br>• Desplazar: x₀ = x₁, x₁ = x₂<br>• Repetir hasta alcanzar la tolerancia deseada<br>• Comparar con Newton: evita derivadas pero converge mas lento</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Clase demostrativa comparando el metodo de la secante con Newton-Raphson.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Aproximacion de Raices con Modelos Reciclados: de la Secante a la Falsa Posicion.</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicio autonomo: redaccion de un esquema comparativo entre secante y Newton.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>Presentaciones interactivas, Excel, Python (Jupyter Notebook).</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-card">
+    <div class="u1-card-header">
+      <div class="u1-card-number c4">04</div>
+      <div class="u1-card-title">Metodo de la Falsa Posicion</div>
+    </div>
+    <div class="u1-card-body">
+      <div class="u1-card-desc">El <strong>metodo de la falsa posicion</strong> (o regula falsi) combina caracteristicas de la biseccion y la secante. Es un metodo cerrado que usa una recta secante entre los extremos del intervalo para aproximar la raiz, garantizando convergencia.</div>
+
+      <div class="u1-img-container">
+        <img src="./assets/5.4.png" alt="Metodo de falsa posicion - ejercicio resuelto paso a paso">
+      </div>
+
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Aspecto</th><th>Descripcion</th><th>Formula</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Fundamento</strong></td><td>Similar a la secante pero con intervalo cerrado</td><td>c = a - f(a)(b-a)/(f(b)-f(a))</td></tr>
+            <tr><td><strong>Ventaja</strong></td><td>Siempre converge al mantener el intervalo</td><td>Combina robustez de biseccion con velocidad de secante</td></tr>
+            <tr><td><strong>Convergencia</strong></td><td>Lineal (peor que secante en algunos casos)</td><td>Puede estancarse en un extremo</td></tr>
+            <tr><td><strong>Mejora</strong></td><td>Metodo de Illinois o Pegasus</td><td>Modificaciones para acelerar convergencia</td></tr>
+            <tr><td><strong>Aplicacion</strong></td><td>Cuando se requiere garantia de convergencia</td><td>Funciones continuas en [a,b]</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="u1-img-container-small">
+        <img src="./assets/5.5.png" alt="Newton-Raphson multivariable - ejercicio resuelto">
+      </div>
+
+      <p class="u1-card-desc"><strong>Algoritmo:</strong><br>• Verificar que f(a)·f(b) < 0 (metodo cerrado)<br>• Calcular c usando la formula de interpolacion lineal<br>• Evaluar f(c)<br>• Si f(a)·f(c) < 0, la raiz esta en [a,c]; sino en [c,b]<br>• Actualizar el intervalo y repetir<br>• La diferencia con biseccion: c no es el punto medio, sino la interseccion de la secante</p>
+
+      <div class="u1-activity-grid">
+        <div class="u1-activity-box acd"><div class="u1-activity-label">👨‍🏫 ACD / Docencia</div>Exposicion guiada sobre el metodo de falsa posicion y sus ventajas frente a biseccion.</div>
+        <div class="u1-activity-box ape"><div class="u1-activity-label">🔬 APE / PAE</div>Laboratorio de Aproximacion de Raices con Modelos Reciclados: de la Secante a la Falsa Posicion (continuacion).</div>
+        <div class="u1-activity-box aa"><div class="u1-activity-label">📖 AA / TA</div>Ejercicios individuales de resolucion aplicando falsa posicion en software.</div>
+      </div>
+
+      <div class="u1-resources"><div class="u1-resources-label">🛠️ Recursos TIC/TAC</div>MATLAB, Octave, bibliotecas de Python (NumPy, SciPy).</div>
+      <div class="u1-eval"><span class="u1-eval-tag">Comprension conceptual</span><span class="u1-eval-tag">Ejercicios de identificacion</span><span class="u1-eval-tag">Analisis de productos</span><span class="u1-eval-tag">Prueba</span></div>
+    </div>
+  </div>
+
+  <div class="u1-section-title">Comparativa de Metodos</div>
+  <div class="u1-card">
+    <div class="u1-card-body">
+      <div class="u1-table-wrap">
+        <table class="u1-table">
+          <thead><tr><th>Metodo</th><th>Tipo</th><th>Convergencia</th><th>Requiere derivada</th><th>Garantia de convergencia</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Biseccion</strong></td><td>Cerrado</td><td>Lineal (lenta)</td><td>No</td><td>Si</td></tr>
+            <tr><td><strong>Newton-Raphson</strong></td><td>Abierto</td><td>Cuadratica (rapida)</td><td>Si</td><td>No</td></tr>
+            <tr><td><strong>Secante</strong></td><td>Abierto</td><td>Superlineal</td><td>No</td><td>No</td></tr>
+            <tr><td><strong>Falsa Posicion</strong></td><td>Cerrado</td><td>Lineal</td><td>No</td><td>Si</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="u1-section-title">Habilidades Blandas Desarrolladas</div>
+  <div class="u1-skills">
+    <div class="u1-skill"><div class="u1-skill-icon">🧠</div><div class="u1-skill-name">Resolucion de problemas</div><div class="u1-skill-cat">Cognitivas</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🤝</div><div class="u1-skill-name">Liderazgo</div><div class="u1-skill-cat">Interpersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">✅</div><div class="u1-skill-name">Responsabilidad</div><div class="u1-skill-cat">Intrapersonales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">🔍</div><div class="u1-skill-name">Critica y Autocritica</div><div class="u1-skill-cat">Emocionales</div></div>
+    <div class="u1-skill"><div class="u1-skill-icon">⚖️</div><div class="u1-skill-name">Honestidad</div><div class="u1-skill-cat">Eticas y Esteticas</div></div>
+  </div>
+
+  <div class="u1-footer">
+    <strong>📍 Universidad Central del Ecuador</strong><br>
+    Facultad de Filosofia, Letras y Ciencias de la Educacion<br>
+    Pedagogia de las Ciencias Experimentales - Informatica | Abril-Julio 2026<br><br>
+    <em>Docente: MSc. Luis Alberto Zapata Villacis</em>
+  </div>
+
+</div>
+
+</body>
+</html>
