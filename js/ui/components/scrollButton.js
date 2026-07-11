@@ -1,7 +1,3 @@
-/* ============================================================
-   SCROLL_BUTTON.JS — Controla visibilidad del botón "Volver arriba"
-   ============================================================ */
-
 const BOTON_ID = 'btn-volver-arriba';
 let boton = null;
 
