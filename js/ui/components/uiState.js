@@ -1,14 +1,7 @@
-/* ============================================================
-   UI_STATE.JS — Gestión de estados de UI (cargando, vacío, error)
-   Soporta múltiples galerías (tareas, recursos, …) por galleryId.
-   ============================================================ */
-
 import { UI_STATES } from '../../data/config.js';
 
-// Referencias DOM cacheadas por galería
 const galleryCache = new Map();
 
-// Mapa de galería → grupo de textos en UI_STATES (config.js)
 const GRUPO_POR_GALERIA = {
   'tareas-gallery': 'tareas',
   'recursos-gallery': 'recursos'
@@ -23,7 +16,6 @@ function getGalleryElements(galleryId) {
   return galleryCache.get(galleryId);
 }
 
-// Invalidar cache cuando el DOM cambia (ej: hot reload)
 export function invalidateGalleryCache(galleryId) {
   if (galleryId) {
     galleryCache.delete(galleryId);
@@ -54,8 +46,6 @@ export function limpiarEstados(galleryId) {
   const { body } = getGalleryElements(galleryId);
   body?.querySelectorAll('.gallery-empty').forEach(el => el.remove());
 }
-
-/* ── Builder interno (antes estaba en uiTemplates, causaba dependencia circular) ── */
 
 function buildEmptyStateHTML({ icon, title, desc, spin }) {
   return `
